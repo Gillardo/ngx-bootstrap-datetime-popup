@@ -1,0 +1,47 @@
+{
+  "name": "ngx-bootstrap-datetime-picker",
+  "version": "1.0.0",
+  "description": "Datetime picker that uses ngx-bootstrap datePicker and timePicker",
+  "keywords": [
+    "Angular2",
+    "Angular4",
+    "date picker",
+    "time picker",
+    "datetime picker"
+  ],
+  "author": "Gillardo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gillardo/ngx-bootstrap-datetime-picker.git"
+  },
+  "scripts": {
+    "build": "tsc -p src"
+  },
+  "typings": "index.d.ts",
+  "module": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@angular/common": "2.2.4",
+    "@angular/compiler": "2.2.4",
+    "@angular/compiler-cli": "2.2.4",
+    "@angular/core": "2.2.4",
+    "@angular/forms": "2.2.4",
+    "@angular/platform-browser": "2.2.4",
+    "@angular/platform-browser-dynamic": "2.2.4",
+    "@types/node": "7.0.1",
+    "codelyzer": "2.0.0-beta.1",
+    "concurrently": "3.0.0",
+    "core-js": "2.4.1",
+    "reflect-metadata": "0.1.8",
+    "rimraf": "2.5.2",
+    "rm": "^0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "systemjs": "^0.20.15",
+    "tslib": "^1.7.1",
+    "tslint": "4.0.2",
+    "typescript": "2.0.3",
+    "uglify-js": "3.0.13",
+    "zone.js": "0.6.25"
+  }
+}

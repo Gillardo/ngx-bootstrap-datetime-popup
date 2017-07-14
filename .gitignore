@@ -1,3 +1,9 @@
+## Ignore .idea/ file created by WebStorm
+.idea/
+
+## Ignore Node
+node_modules
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

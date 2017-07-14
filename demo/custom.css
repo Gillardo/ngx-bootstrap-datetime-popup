@@ -1,0 +1,46 @@
+.datetime-picker-default > .wrapper .glyphicon {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.datetime-picker-default > .wrapper .bg-faded {
+    border:0;
+    background-color: #fff;
+}
+
+.datetime-picker-default > .wrapper button {
+    border:0;
+    background-color: #fff;
+}
+
+.datetime-picker-default > .wrapper button.active {
+    background-color: #ddd;
+}
+
+.datetime-picker-default > .wrapper .glyphicon.glyphicon-remove-circle:before {
+    content: "\f05c";
+}
+
+.datetime-picker-default > .wrapper .glyphicon.glyphicon-chevron-down:before {
+    content: "\f078";
+}
+
+.datetime-picker-default > .wrapper .glyphicon.glyphicon-chevron-up:before {
+    content: "\f077";
+}
+
+.datetime-picker-default > .wrapper .glyphicon.glyphicon-chevron-left:before {
+    content: "\f053";
+}
+
+.datetime-picker-default > .wrapper .glyphicon.glyphicon-chevron-right:before {
+    content: "\f054";
+}
+
+.datetime-picker-default > .wrapper .glyphicon.hidden {
+    display: none !important;
+}
