@@ -1,7 +1,7 @@
 {
-  "name": "ngx-bootstrap-datetime-picker",
+  "name": "ngx-bootstrap-datetime-popup",
   "version": "1.0.0",
-  "description": "Datetime picker that uses ngx-bootstrap datePicker and timePicker",
+  "description": "Datetime popup that uses ngx-bootstrap datePicker and timePicker",
   "keywords": [
     "Angular2",
     "Angular4",
@@ -11,7 +11,7 @@
   ],
   "author": "Gillardo",
   "license": "MIT",
-  "url": "https://github.com/Gillardo//ngx-bootstrap-datetime-picker.git",
+  "url": "https://github.com/Gillardo//ngx-bootstrap-datetime-popup.git",
   "scripts": {
     "watch": "webpack --watch --progress --profile",
     "debug": "rimraf demo/build && webpack --progress --profile --bail",
@@ -33,6 +33,7 @@
     "concurrently": "3.0.0",
     "core-js": "2.4.1",
     "html-webpack-plugin": "^2.29.0",
+    "ngx-bootstrap": "^1.7.1",
     "reflect-metadata": "0.1.8",
     "rimraf": "^2.6.1",
     "rm": "^0.1.8",
@@ -45,8 +46,8 @@
     "zone.js": "0.6.25"
   },
   "bugs": {
-    "url": "https://github.com/gillardo/ngx-bootstrap-datetime-picker/issues"
+    "url": "https://github.com/gillardo/ngx-bootstrap-datetime-popup/issues"
   },
-  "homepage": "https://github.com/gillardo/ngx-bootstrap-datetime-picker#readme",
+  "homepage": "https://github.com/gillardo/ngx-bootstrap-datetime-popup#readme",
   "main": "src/index.ts"
 }

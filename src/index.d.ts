@@ -1,2 +1,2 @@
-export * from './datetime-picker.component';
-export * from './datetime-picker.module';
+export * from './datetime-popup.component';
+export * from './datetime-popup.module';

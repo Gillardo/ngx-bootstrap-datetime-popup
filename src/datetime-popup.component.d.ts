@@ -1,10 +1,10 @@
 /// <reference types="core-js" />
 import { EventEmitter } from '@angular/core';
-export declare class DatetimePickerComponent {
+export declare class DatetimePopupComponent {
     value: Date;
     valueChange: EventEmitter<{}>;
-    showPicker: boolean;
-    showPickerChange: EventEmitter<{}>;
+    showPopup: boolean;
+    showPopupChange: EventEmitter<{}>;
     showDate: boolean;
     showTime: boolean;
     showWeeks: boolean;

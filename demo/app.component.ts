@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
                     </span>
                 </div>
     
-                <datetime-picker [(value)]="myDate" [(showPicker)]="showPicker"></datetime-picker>
+                <datetime-popup [(value)]="myDate" [(showPopup)]="showPopup"></datetime-popup>
             </div>
         </div>
     `
@@ -24,5 +24,5 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
     myDate: Date = new Date();
-    showPicker = false;
+    showPopup = false;
 }

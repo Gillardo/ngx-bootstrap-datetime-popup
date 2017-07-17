@@ -1,16 +1,16 @@
-# ngx-bootstrap-datetime-picker
-Date and time picker using ngx-bootstrap library
+# ngx-bootstrap-datetime-popup
+Date and time popup picker using ngx-bootstrap library
 
-To use the component, import the `DatetimePickerModule` via your .ts code, and add it to your modules
+To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules
 
 ```
-import { DatetimePickerModule } from 'ngx-bootstrap-datetime-picker';
+import { DatetimePopupModule } from 'ngx-bootstrap-datetime-popup';
 ```
 
 Now add the component to your HTML.
 
 ```
-<datetime-picker [(value)]="myDate"></datetime-picker>
+<datetime-popup [(value)]="myDate"></datetime-popup>
 ```
 
 Since i dont really like the style of the ngx-bootstrap datePicker, you can override the css like any other style, here is an example, which can be found in the demo folder.
@@ -18,7 +18,7 @@ Since i dont really like the style of the ngx-bootstrap datePicker, you can over
 This css also overrides the glyphicon icons that are no longer used in bootstrap 4.
 
 ```
-datetime-picker > .dropdown .glyphicon {
+datetime-popup > .dropdown .glyphicon {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
@@ -27,46 +27,46 @@ datetime-picker > .dropdown .glyphicon {
     -moz-osx-font-smoothing: grayscale;
 }
 
-datetime-picker > .dropdown timepicker {
+datetime-popup > .dropdown timepicker {
     display: flex;
     justify-content: center;
 }
 
-datetime-picker > .dropdown .bg-faded {
+datetime-popup > .dropdown .bg-faded {
     border:0;
     background-color: #fff;
 }
 
-datetime-picker > .dropdown datepicker button {
+datetime-popup > .dropdown datepicker button {
     border:0;
     background-color: #fff;
 }
 
-datetime-picker > .dropdown datepicker button.active {
+datetime-popup > .dropdown datepicker button.active {
     background-color: #ddd;
 }
 
-datetime-picker > .dropdown .glyphicon.glyphicon-remove-circle:before {
+datetime-popup > .dropdown .glyphicon.glyphicon-remove-circle:before {
     content: "\f05c";
 }
 
-datetime-picker > .dropdown .glyphicon.glyphicon-chevron-down:before {
+datetime-popup > .dropdown .glyphicon.glyphicon-chevron-down:before {
     content: "\f078";
 }
 
-datetime-picker > .dropdown .glyphicon.glyphicon-chevron-up:before {
+datetime-popup > .dropdown .glyphicon.glyphicon-chevron-up:before {
     content: "\f077";
 }
 
-datetime-picker > .dropdown .glyphicon.glyphicon-chevron-left:before {
+datetime-popup > .dropdown .glyphicon.glyphicon-chevron-left:before {
     content: "\f053";
 }
 
-datetime-picker > .dropdown .glyphicon.glyphicon-chevron-right:before {
+datetime-popup > .dropdown .glyphicon.glyphicon-chevron-right:before {
     content: "\f054";
 }
 
-datetime-picker > .dropdown .glyphicon.hidden {
+datetime-popup > .dropdown .glyphicon.hidden {
     display: none !important;
 }
 ```

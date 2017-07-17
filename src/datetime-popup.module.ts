@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { DatepickerModule, DatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { TimepickerModule, TimepickerConfig } from 'ngx-bootstrap/timepicker';
 
-import { DatetimePickerComponent } from './datetime-picker.component';
+import { DatetimePopupComponent } from './datetime-popup.component';
 import { OffClickDirective } from './offclick.directive';
 
 @NgModule({
@@ -15,14 +15,14 @@ import { OffClickDirective } from './offclick.directive';
         TimepickerModule
     ],
     declarations: [
-        DatetimePickerComponent,
+        DatetimePopupComponent,
         OffClickDirective
     ],
     exports: [
-        DatetimePickerComponent
+        DatetimePopupComponent
     ],
     entryComponents: [
-        DatetimePickerComponent
+        DatetimePopupComponent
     ],
     providers: [
         DatepickerConfig,
@@ -30,6 +30,6 @@ import { OffClickDirective } from './offclick.directive';
     ]
 })
 
-export class DatetimePickerModule {
+export class DatetimePopupModule {
 
 }

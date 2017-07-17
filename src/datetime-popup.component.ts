@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-    selector: 'datetime-picker',
+    selector: 'datetime-popup',
     template: `
-        <div class="dropdown" [ngClass]="{ 'show': showPicker }">
+        <div class="dropdown" [ngClass]="{ 'show': showPopup }">
             <ul class="dropdown-menu" role="menu" (offClick)="offClick($event)">
                 <li class="my-2 mx-2">
                     <datepicker *ngIf="showDate" [(ngModel)]="value" 
@@ -29,7 +29,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     `
 })
 
-export class DatetimePickerComponent {
+export class DatetimePopupComponent {
 
     @Input()
     value: Date;
@@ -38,10 +38,10 @@ export class DatetimePickerComponent {
     valueChange = new EventEmitter();
 
     @Input()
-    showPicker = false;
+    showPopup = false;
 
     @Output()
-    showPickerChange = new EventEmitter();
+    showPopupChange = new EventEmitter();
 
     @Input()
     showDate = true;
@@ -68,8 +68,8 @@ export class DatetimePickerComponent {
     dateDisabled: any[] = [];
 
     offClick() {
-        this.showPicker = false;
-        this.showPickerChange.emit(false);
+        this.showPopup = false;
+        this.showPopupChange.emit(false);
     }
 
     onNow() {
