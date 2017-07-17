@@ -11,17 +11,12 @@
   ],
   "author": "Gillardo",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gillardo/ngx-bootstrap-datetime-picker.git"
-  },
+  "url": "https://github.com/Gillardo//ngx-bootstrap-datetime-picker.git",
   "scripts": {
     "watch": "webpack --watch --progress --profile",
     "debug": "rimraf demo/build && webpack --progress --profile --bail",
     "build": "rimraf demo/build && webpack --progress --profile --bail"
   },
-  "typings": "index.d.ts",
-  "module": "index.js",
   "dependencies": {},
   "devDependencies": {
     "@angular/common": "2.2.4",
@@ -48,5 +43,10 @@
     "uglify-js": "3.0.13",
     "webpack": "^3.3.0",
     "zone.js": "0.6.25"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/gillardo/ngx-bootstrap-datetime-picker/issues"
+  },
+  "homepage": "https://github.com/gillardo/ngx-bootstrap-datetime-picker#readme",
+  "main": "src/index.ts"
 }
