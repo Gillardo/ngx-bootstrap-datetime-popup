@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
                     <div class="form-control">{{ myDate| date:'dd-MMM-yyyy HH:mm:ss'}}</div>
     
                     <span class="input-group-btn">
-                        <button class="btn btn-secondary" (click)="showPicker = showPicker == true ? false : true">
+                        <button class="btn btn-secondary" (click)="showPopup = showPopup == true ? false : true">
                             <i class="fa fa-calendar" aria-hidden="true"></i>
                         </button>
                     </span>
