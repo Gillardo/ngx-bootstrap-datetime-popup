@@ -1,7 +1,7 @@
 # ngx-bootstrap-datetime-picker
 Date and time picker using ngx-bootstrap library
 
-To use the component, import the `DateTimePickerModule` via your .ts code, and add it to your modules
+To use the component, import the `DatetimePickerModule` via your .ts code, and add it to your modules
 
 ```
 import { DatetimePickerModule } from 'ngx-bootstrap-datetime-picker';
