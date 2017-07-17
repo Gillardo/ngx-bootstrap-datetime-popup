@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
                     </span>
                 </div>
     
-                <datetime-picker [(value)]="myDate" [showPicker]="showPicker"></datetime-picker>
+                <datetime-picker [(value)]="myDate" [(showPicker)]="showPicker"></datetime-picker>
             </div>
         </div>
     `

@@ -16,7 +16,9 @@
     "url": "https://github.com/gillardo/ngx-bootstrap-datetime-picker.git"
   },
   "scripts": {
-    "build": "tsc -p src"
+    "watch": "webpack --watch --progress --profile",
+    "debug": "rimraf demo/build && webpack --progress --profile --bail",
+    "build": "rimraf demo/build && webpack --progress --profile --bail"
   },
   "typings": "index.d.ts",
   "module": "index.js",
@@ -29,19 +31,22 @@
     "@angular/forms": "2.2.4",
     "@angular/platform-browser": "2.2.4",
     "@angular/platform-browser-dynamic": "2.2.4",
+    "@types/core-js": "^0.9.42",
     "@types/node": "7.0.1",
+    "awesome-typescript-loader": "^3.2.1",
     "codelyzer": "2.0.0-beta.1",
     "concurrently": "3.0.0",
     "core-js": "2.4.1",
+    "html-webpack-plugin": "^2.29.0",
     "reflect-metadata": "0.1.8",
-    "rimraf": "2.5.2",
+    "rimraf": "^2.6.1",
     "rm": "^0.1.8",
     "rxjs": "5.0.0-beta.12",
-    "systemjs": "^0.20.15",
     "tslib": "^1.7.1",
     "tslint": "4.0.2",
     "typescript": "2.0.3",
     "uglify-js": "3.0.13",
+    "webpack": "^3.3.0",
     "zone.js": "0.6.25"
   }
 }

@@ -1,6 +1,9 @@
 ## Ignore .idea/ file created by WebStorm
 .idea/
 
+## Ignore generated files
+demo/build/*
+
 ## Ignore Node
 node_modules
 

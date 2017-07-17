@@ -1,40 +1,35 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
     selector: 'datetime-picker',
     template: `
-        <div *ngIf="showPicker" (offClick)="offClick()" [ngClass]="className">
-            <div class="wrapper">
-                <datepicker *ngIf="showDate" [(ngModel)]="value" (selectionDone)="onDateChange($event)"></datepicker>
-                <timepicker *ngIf="showTime" [(ngModel)]="value" (change)="onTimeChange()"></timepicker>
-            </div>
+        <div class="dropdown" [ngClass]="{ 'show': showPicker }">
+            <ul class="dropdown-menu" role="menu" (offClick)="offClick($event)">
+                <li class="my-2 mx-2">
+                    <datepicker *ngIf="showDate" [(ngModel)]="value" 
+                                (selectionDone)="onDateChange($event)"
+                                [showWeeks]="showWeeks"
+                                [datepickerMode]="datepickerMode"
+                                [minDate]="minDate"
+                                [maxDate]="maxDate"
+                                [dateDisabled]="dateDisabled"></datepicker>
+                    <timepicker *ngIf="showTime" [(ngModel)]="value" (change)="onTimeChange()"></timepicker>
+                </li>
+                <li class="mx-2 mb-2">
+                    <span class="btn-group pull-left">
+                        <button class="btn btn-secondary btn-sm" (click)="onNow()">Now</button>
+                        <button class="btn btn-secondary btn-sm" (click)="onClear()">Clear</button>
+                    </span>
+                    <span class="btn-group pull-right">
+                        <button class="btn btn-secondary btn-sm" (click)="offClick()">Close</button>
+                    </span>
+                </li>
+            </ul>
         </div>
-    `,
-    styles: [
-        `
-            .datetime-picker-default {
-                position: relative;
-                z-index: 1000;
-            }
-
-            .datetime-picker-default > .wrapper {
-                position: absolute;
-                background: white;
-                padding: .5rem;
-                border: 1px solid #efefef;
-                border-radius: .5rem;
-                margin-top: 3px;
-            }
-
-            .datetime-picker-default > .wrapper > timepicker {
-                display: flex;
-                justify-content: center;
-            }
-        `
-    ]
+    `
 })
 
-export class DatetimePickerComponent implements OnInit {
+export class DatetimePickerComponent {
 
     @Input()
     value: Date;
@@ -45,6 +40,9 @@ export class DatetimePickerComponent implements OnInit {
     @Input()
     showPicker = false;
 
+    @Output()
+    showPickerChange = new EventEmitter();
+
     @Input()
     showDate = true;
 
@@ -52,17 +50,34 @@ export class DatetimePickerComponent implements OnInit {
     showTime = true;
 
     @Input()
-    className = '';
+    showWeeks = false;
 
-    ngOnInit() {
-        // setup class if empty
-        if (this.className.length === 0) {
-            this.className = 'datetime-picker-default';
-        }
-    }
+    @Input()
+    datepickerMode: string = 'day';
+
+    @Input()
+    initDate: Date = null;
+
+    @Input()
+    minDate: Date = null;
+
+    @Input()
+    maxDate: Date = null;
+
+    @Input()
+    dateDisabled: any[] = [];
 
     offClick() {
         this.showPicker = false;
+        this.showPickerChange.emit(false);
+    }
+
+    onNow() {
+        this.onDateChange(new Date());
+    }
+
+    onClear() {
+        this.onDateChange(null);
     }
 
     onDateChange(val: Date) {
