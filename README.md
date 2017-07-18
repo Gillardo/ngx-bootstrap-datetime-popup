@@ -13,7 +13,7 @@ Now add the component to your HTML.
 <datetime-popup [(value)]="myDate"></datetime-popup>
 ```
 
-Since i dont really like the style of the ngx-bootstrap datePicker, you can override the css like any other style, here is an example, which can be found in the demo folder.
+Since i dont really like the style of the ngx-bootstrap datePicker, you can override the css like any other style, here is an example
 
 This css also overrides the glyphicon icons that are no longer used in bootstrap 4.
 
