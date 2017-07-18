@@ -2,6 +2,8 @@
   "name": "ngx-bootstrap-datetime-popup",
   "version": "1.0.1",
   "description": "Datetime popup that uses ngx-bootstrap datePicker and timePicker",
+  "homepage": "https://github.com/gillardo/ngx-bootstrap-datetime-popup#readme",
+  "main": "ngx-bootstrap-datetime-popup.js",
   "keywords": [
     "Angular2",
     "Angular4",
@@ -11,11 +13,13 @@
   ],
   "author": "Gillardo",
   "license": "MIT",
-  "url": "https://github.com/Gillardo//ngx-bootstrap-datetime-popup.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gillardo/ngx-bootstrap-datetime-popup.git"
+  },
   "scripts": {
-    "watch": "webpack --watch --progress --profile",
-    "debug": "rimraf demo/build && webpack --progress --profile --bail",
-    "build": "rimraf demo/build && webpack --progress --profile --bail"
+    "watch": "tsc -p src -w",
+    "build": "del lib && tsc -p src"
   },
   "dependencies": {},
   "devDependencies": {
@@ -28,26 +32,13 @@
     "@angular/platform-browser-dynamic": "2.2.4",
     "@types/core-js": "^0.9.42",
     "@types/node": "7.0.1",
-    "awesome-typescript-loader": "^3.2.1",
-    "codelyzer": "2.0.0-beta.1",
-    "concurrently": "3.0.0",
-    "core-js": "2.4.1",
-    "html-webpack-plugin": "^2.29.0",
     "ngx-bootstrap": "^1.7.1",
     "reflect-metadata": "0.1.8",
-    "rimraf": "^2.6.1",
-    "rm": "^0.1.8",
-    "rxjs": "5.0.0-beta.12",
-    "tslib": "^1.7.1",
-    "tslint": "4.0.2",
-    "typescript": "2.0.3",
-    "uglify-js": "3.0.13",
-    "webpack": "^3.3.0",
+    "rxjs": "^5.4.2",
+    "typescript": "^2.4.1",
     "zone.js": "0.6.25"
   },
   "bugs": {
     "url": "https://github.com/gillardo/ngx-bootstrap-datetime-popup/issues"
-  },
-  "homepage": "https://github.com/gillardo/ngx-bootstrap-datetime-popup#readme",
-  "main": "src/index.ts"
+  }
 }

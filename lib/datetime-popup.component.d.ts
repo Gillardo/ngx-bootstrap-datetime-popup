@@ -1,4 +1,3 @@
-/// <reference types="core-js" />
 import { EventEmitter } from '@angular/core';
 export declare class DatetimePopupComponent {
     value: Date;

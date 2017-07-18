@@ -2,13 +2,17 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { DatetimePopupModule } from '../src/datetime-popup.module';
+import { DatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { DatetimePopupModule } from 'ngx-bootstrap-datetime-popup/components';
 import { AppComponent } from './app.component';
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
+        DatepickerModule,
+        TimepickerModule,
         DatetimePopupModule
     ],
     declarations: [
