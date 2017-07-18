@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     selector: 'datetime-popup',
     template: `
         <div class="dropdown" [ngClass]="{ 'show': showPopup }">
-            <ul class="dropdown-menu" role="menu" (offClick)="offClick($event)">
+            <ul class="dropdown-menu" role="menu" (offClick)="offClick($event)" [ngClass]="{ 'show': showPopup }">
                 <li class="my-2 mx-2">
                     <datepicker *ngIf="showDate" [(ngModel)]="value" 
                                 (selectionDone)="onDateChange($event)"
