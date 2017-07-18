@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { DatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
-import { DatetimePopupModule } from 'ngx-bootstrap-datetime-popup/components';
+import { DatetimePopupModule } from 'ngx-bootstrap-datetime-popup';
 import { AppComponent } from './app.component';
 
 @NgModule({

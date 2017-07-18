@@ -3,7 +3,9 @@
   "version": "1.0.1",
   "description": "Datetime popup that uses ngx-bootstrap datePicker and timePicker",
   "homepage": "https://github.com/gillardo/ngx-bootstrap-datetime-popup#readme",
-  "main": "ngx-bootstrap-datetime-popup.js",
+  "main": "lib\\datetime-popup.bundle.js",
+  "module": "lib\\datetime-popup.module.js",
+  "types": "lib\\datetime-popup.module.d.ts",
   "keywords": [
     "Angular2",
     "Angular4",
@@ -32,9 +34,10 @@
     "@angular/platform-browser-dynamic": "2.2.4",
     "@types/core-js": "^0.9.42",
     "@types/node": "7.0.1",
-    "ngx-bootstrap": "^1.7.1",
+    "ngx-bootstrap": "^1.7.0",
     "reflect-metadata": "0.1.8",
     "rxjs": "^5.4.2",
+    "tslint": "^5.5.0",
     "typescript": "^2.4.1",
     "zone.js": "0.6.25"
   },

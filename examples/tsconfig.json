@@ -7,10 +7,20 @@
     "moduleResolution": "node",
     "removeComments": true,
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
+    "skipLibCheck": true,
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [
+      "core-js"
+    ]
   },
   "exclude": [
     "node_modules"
-  ],
-  "skipLibCheck": true
+  ]
 }

@@ -22,10 +22,11 @@
   },
   "homepage": "https://github.com/jhades/ng2-webpack-minimal#readme",
   "devDependencies": {
+    "@types/core-js": "^0.9.42",
+    "@types/node": "^8.0.14",
     "codelyzer": "^3.1.2",
     "typescript": "^2.2.1",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0"
+    "webpack": "^1.12.9"
   },
   "dependencies": {
     "@angular/common": "2.2.4",
@@ -37,7 +38,7 @@
     "@angular/platform-browser-dynamic": "2.2.4",
     "core-js": "2.4.1",
     "es6-promise": "^3.0.2",
-    "ngx-bootstrap": "^1.7.1",
+    "ngx-bootstrap": "^1.7.0",
     "ngx-bootstrap-datetime-popup": "^1.0.1",
     "reflect-metadata": "0.1.8",
     "rxjs": "5.0.0-beta.12",
