@@ -1,19 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "sourceMap": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "outDir": "./lib",
     "lib": ["es2015", "dom"],
     "declaration": true
   },
   "files": [
-    "./src/datetime-popup.module.ts",
-    "./node_modules/ngx-bootstrap/datepicker",
-    "./node_modules/ngx-bootstrap/timepicker"
+    "./index.ts"
   ],
   "angularCompilerOptions": {
     "skipTemplateCodegen": true

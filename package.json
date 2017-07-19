@@ -1,10 +1,10 @@
 {
   "name": "ngx-bootstrap-datetime-popup",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Datetime popup that uses ngx-bootstrap datePicker and timePicker",
   "homepage": "https://github.com/gillardo/ngx-bootstrap-datetime-popup#readme",
-  "main": "lib\\datetime-popup.bundle.js",
-  "module": "lib\\datetime-popup.module.js",
+  "main": "lib\\datetime-popup.module.js",
+  "module": "index.js",
   "types": "lib\\datetime-popup.module.d.ts",
   "keywords": [
     "Angular2",
@@ -15,13 +15,14 @@
   ],
   "author": "Gillardo",
   "license": "MIT",
+  "typings": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Gillardo/ngx-bootstrap-datetime-popup.git"
   },
   "scripts": {
     "watch": "tsc -p src -w",
-    "build": "del lib && tsc -p src"
+    "build": "del lib && tsc -p src && tsc"
   },
   "dependencies": {},
   "devDependencies": {
