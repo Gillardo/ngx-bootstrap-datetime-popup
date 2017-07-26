@@ -11,8 +11,8 @@ import { OffClickDirective } from './offclick.directive';
     imports: [
         CommonModule,
         FormsModule,
-        DatepickerModule,
-        TimepickerModule
+        DatepickerModule.forRoot(),
+        TimepickerModule.forRoot()
     ],
     declarations: [
         DatetimePopupComponent,
