@@ -1,6 +1,6 @@
 {
   "name": "ngx-bootstrap-datetime-popup",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Datetime popup that uses ngx-bootstrap datePicker and timePicker",
   "homepage": "https://github.com/gillardo/ngx-bootstrap-datetime-popup#readme",
   "main": "lib\\datetime-popup.module.js",
