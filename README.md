@@ -1,7 +1,7 @@
 # ngx-bootstrap-datetime-popup
 Date and time popup picker using ngx-bootstrap library
 
-Simple example in demo folder, found [here](/demo/src/index.html)
+Simple example in demo folder, found [here](https://rawgit.com/Gillardo/ngx-bootstrap-datetime-popup/master/demo/src/index.html)
 
 To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules
 
