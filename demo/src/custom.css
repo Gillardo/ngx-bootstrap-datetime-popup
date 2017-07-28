@@ -1,25 +1,3 @@
-# ngx-bootstrap-datetime-popup
-Date and time popup picker using ngx-bootstrap library
-
-Simple example in demo folder, found [here](/demo/src/index.html)
-
-To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules
-
-```
-import { DatetimePopupModule } from 'ngx-bootstrap-datetime-popup';
-```
-
-Now add the component to your HTML.
-
-```
-<datetime-popup [(value)]="myDate"></datetime-popup>
-```
-
-Since i dont really like the style of the ngx-bootstrap datePicker, you can override the css like any other style, here is an example
-
-This css also overrides the glyphicon icons that are no longer used in bootstrap 4.
-
-```
 datetime-popup > .dropdown .glyphicon {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -39,9 +17,10 @@ datetime-popup > .dropdown .bg-faded {
     background-color: #fff;
 }
 
-datetime-popup > .dropdown datepicker button {
-    border:0;
+datetime-popup > .dropdown datepicker .btn-secondary {
     background-color: #fff;
+    border-color: #dddddd;
+    color: #000;
 }
 
 datetime-popup > .dropdown datepicker button.active {
@@ -71,6 +50,3 @@ datetime-popup > .dropdown .glyphicon.glyphicon-chevron-right:before {
 datetime-popup > .dropdown .glyphicon.hidden {
     display: none !important;
 }
-```
-
-If you want more features please create a PR as i am a little struck for time at the moment.  Happy coding!
