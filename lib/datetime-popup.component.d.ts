@@ -15,6 +15,5 @@ export declare class DatetimePopupComponent {
     offClick(): void;
     onNow(): void;
     onClear(): void;
-    onDateChange(val: Date): void;
-    onTimeChange(): void;
+    onPickerChange(): void;
 }

@@ -23,7 +23,8 @@
   "scripts": {
     "watch": "tsc -p src -w",
     "build": "del lib && tsc -p src && tsc",
-    "demo": "webpack"
+    "demo": "webpack",
+    "all": "npm run build && npm run demo"
   },
   "dependencies": {},
   "devDependencies": {
@@ -37,7 +38,7 @@
     "@types/core-js": "^0.9.42",
     "@types/node": "7.0.1",
     "awesome-typescript-loader": "^3.2.2",
-    "ngx-bootstrap": "^1.7.0",
+    "ngx-bootstrap": "^1.8.1",
     "reflect-metadata": "0.1.8",
     "rxjs": "^5.4.2",
     "tslint": "^5.5.0",

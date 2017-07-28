@@ -15,13 +15,13 @@ import { Component, ViewContainerRef } from '@angular/core';
                             </button>
                         </span>
                     </div>
-                    <datetime-popup [(value)]="myDate"
+                    <datetime-popup [value]="myDate" (valueChange)="onValueChange($event)"
                                     [(showPopup)]="showPicker"
                                     [showDate]="showDate"
                                     [showTime]="showTime"></datetime-popup>
                 </div>
             </div>
-            Formatted with pipe: {{ myDate | date: 'dd-MM-yyyy HH:ss' }}
+            Formatted with pipe: {{ myDate | date: 'dd-MM-yyyy HH:mm:ss' }}
         </div>
     `
 })
@@ -42,5 +42,9 @@ export class AppComponent {
         if (this.showPicker === false) {
             this.showPicker = true;
         }
+    }
+
+    onValueChange(val: Date) {
+        this.myDate = val;
     }
 }

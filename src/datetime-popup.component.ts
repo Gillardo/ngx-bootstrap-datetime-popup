@@ -7,13 +7,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
             <ul class="dropdown-menu" role="menu" [ngClass]="{ 'show': showPopup === true }">
                 <li class="my-2 mx-2">
                     <datepicker *ngIf="showDate" [(ngModel)]="value" 
-                                (selectionDone)="onDateChange($event)"
+                                (ngModelChange)="onPickerChange()"
                                 [showWeeks]="showWeeks"
                                 [datepickerMode]="datepickerMode"
                                 [minDate]="minDate"
                                 [maxDate]="maxDate"
                                 [dateDisabled]="dateDisabled"></datepicker>
-                    <timepicker *ngIf="showTime" [(ngModel)]="value" (change)="onTimeChange()"></timepicker>
+                    <timepicker *ngIf="showTime" [(ngModel)]="value" (ngModelChange)="onPickerChange()"></timepicker>
                 </li>
                 <li class="mx-2 mb-2">
                     <span class="btn-group pull-left">
@@ -73,18 +73,16 @@ export class DatetimePopupComponent {
     }
 
     onNow() {
-        this.onDateChange(new Date());
+        this.value = new Date();
+        this.valueChange.emit(this.value);
     }
 
     onClear() {
-        this.onDateChange(null);
+        this.value = null;
+        this.valueChange.emit(this.value);
     }
 
-    onDateChange(val: Date) {
-        this.valueChange.emit(val);
-    }
-
-    onTimeChange() {
+    onPickerChange() {
         this.valueChange.emit(this.value);
     }
 }

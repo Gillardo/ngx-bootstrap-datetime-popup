@@ -7,4 +7,5 @@ export declare class AppComponent {
     showTime: boolean;
     constructor(viewContainerRef: ViewContainerRef);
     onTogglePicker(): void;
+    onValueChange(val: Date): void;
 }
