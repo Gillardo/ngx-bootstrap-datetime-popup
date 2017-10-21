@@ -1,2 +1,3 @@
-export declare class DatetimePopupModule {
-}
+import { NgModule } from '@angular/core'; 
+@NgModule({})
+export declare class DatetimePopupModule {}
