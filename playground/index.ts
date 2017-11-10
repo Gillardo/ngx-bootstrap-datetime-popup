@@ -62,7 +62,7 @@ export class AppComponent {
         CommonModule,
         BrowserModule,
         FormsModule,
-        DatetimePopupModule
+        DatetimePopupModule.forRoot()
     ],
     declarations: [
         AppComponent

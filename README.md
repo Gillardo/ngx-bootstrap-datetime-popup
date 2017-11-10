@@ -5,7 +5,7 @@ This is currently a very simple date time picker, with only the features i neede
 
 ~~Simple example in demo folder, found [here](https://rawgit.com/Gillardo/ngx-bootstrap-datetime-popup/master/playground/index.html)~~
 
-To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules
+To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules, using `.forRoot` method, similar to `ngx-bootstrap`
 
 ```
 import { DatetimePopupModule } from 'ngx-bootstrap-datetime-popup';
