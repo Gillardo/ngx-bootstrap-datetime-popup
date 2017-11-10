@@ -32,7 +32,11 @@ export interface IDatetimePopupButtonOptions {
 }
 ```
 
-Look at the example and you can see how i have changed the "Close" button style.
+The component accepts 3 inputs `closeButton`, `clearButton` and `nowButton`, so you can bind your options like so:
+
+```
+<datetime-popup [(value)]="myDate" [closeButton]="myCloseOptions"></datetime-popup>
+```
 
 Since i dont really like the style of the ngx-bootstrap datePicker, you can override the css like any other style, here is an example
 
