@@ -1,0 +1,546 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ngx-bootstrap-datetime-popup</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	    <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">ngx-bootstrap-datetime-popup</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="./index.html">ngx-bootstrap-datetime-popup</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a 
+                                         href="./overview.html" 
+                                        
+                                         href="./overview.html" 
+                                         class="active" >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                                <li class="link">
+                                  <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <div class="menu-toggler linked" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
+                        </a>
+                        <ul class="links collapse "
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="./modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./modules/DatetimePopupModule.html" >DatetimePopupModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="./components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/DatetimePopupComponent.html" >DatetimePopupComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-directives-links"
+                            >
+                            <span class="fa fa-code"></span>
+                            <span>Directives</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-directives-links"
+                            >
+                                <li class="link">
+                                    <a href="./directives/OffClickDirective.html" >OffClickDirective</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-classes-links"
+                            >
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="./classes/DatetimePopupButtonOptions.html" >DatetimePopupButtonOptions</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="./interfaces/IDatetimePopupButtonOptions.html" >IDatetimePopupButtonOptions</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="./index.html">ngx-bootstrap-datetime-popup</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a 
+                                                href="./overview.html" 
+                                               
+                                                href="./overview.html" 
+                                                class="active" >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <div class="menu-toggler linked" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
+                               </a>
+                               <ul class="links collapse "
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="./modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./modules/DatetimePopupModule.html" >DatetimePopupModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="./components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/DatetimePopupComponent.html" >DatetimePopupComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#directives-links"
+                   >
+                                   <span class="fa fa-code"></span>
+                                   <span>Directives</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="directives-links"
+                   >
+                                       <li class="link">
+                                           <a href="./directives/OffClickDirective.html" >OffClickDirective</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#classes-links"
+                   >
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="./classes/DatetimePopupButtonOptions.html" >DatetimePopupButtonOptions</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="./interfaces/IDatetimePopupButtonOptions.html" >IDatetimePopupButtonOptions</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content overview">
+                   <div class="content-data">
+
+
+<h3>Overview</h3>
+            <div class="text-center module-graph-container">
+                <div id="module-graph-svg">
+                    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: dependencies Pages: 1 -->
+<svg width="556pt" height="360pt"
+ viewBox="0.00 0.00 556.00 360.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 356)">
+<title>dependencies</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-356 552,-356 552,4 -4,4"/>
+<text text-anchor="start" x="253.0091" y="-42.4" font-family="sans-serif" font-weight="bold" font-size="14.00" fill="#000000">Legend</text>
+<polygon fill="#ffffb3" stroke="transparent" points="40,-10 40,-30 60,-30 60,-10 40,-10"/>
+<text text-anchor="start" x="63.629" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Declarations</text>
+<polygon fill="#8dd3c7" stroke="transparent" points="153,-10 153,-30 173,-30 173,-10 153,-10"/>
+<text text-anchor="start" x="176.7251" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Module</text>
+<polygon fill="#80b1d3" stroke="transparent" points="239,-10 239,-30 259,-30 259,-10 239,-10"/>
+<text text-anchor="start" x="262.7812" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Bootstrap</text>
+<polygon fill="#fdb462" stroke="transparent" points="336,-10 336,-30 356,-30 356,-10 336,-10"/>
+<text text-anchor="start" x="359.6732" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Providers</text>
+<polygon fill="#fb8072" stroke="transparent" points="432,-10 432,-30 452,-30 452,-10 432,-10"/>
+<text text-anchor="start" x="455.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
+<g id="clust1" class="cluster">
+<title>cluster_AppModule</title>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="190,-146 190,-344 498,-344 498,-146 190,-146"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_AppModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="368,-154 368,-206 490,-206 490,-154 368,-154"/>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_AppModule_imports</title>
+<polygon fill="none" stroke="#000000" points="198,-154 198,-206 360,-206 360,-154 198,-154"/>
+</g>
+<g id="clust6" class="cluster">
+<title>cluster_AppModule_bootstrap</title>
+<polygon fill="none" stroke="#000000" points="291,-284 291,-336 415,-336 415,-284 291,-284"/>
+</g>
+<g id="clust8" class="cluster">
+<title>cluster_DatetimePopupModule</title>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="8,-70 8,-138 540,-138 540,-70 8,-70"/>
+</g>
+<g id="clust9" class="cluster">
+<title>cluster_DatetimePopupModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="212,-78 212,-130 532,-130 532,-78 212,-78"/>
+</g>
+<g id="clust13" class="cluster">
+<title>cluster_DatetimePopupModule_exports</title>
+<polygon fill="none" stroke="#000000" points="16,-78 16,-130 204,-130 204,-78 16,-78"/>
+</g>
+<!-- AppComponent -->
+<g id="node1" class="node">
+<title>AppComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="481.9399,-198 376.0601,-198 376.0601,-162 481.9399,-162 481.9399,-198"/>
+<text text-anchor="middle" x="429" y="-175.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppComponent</text>
+</g>
+<!-- AppModule -->
+<g id="node2" class="node">
+<title>AppModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="394.6571,-263 391.6571,-267 370.6571,-267 367.6571,-263 311.3429,-263 311.3429,-227 394.6571,-227 394.6571,-263"/>
+<text text-anchor="middle" x="353" y="-240.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppModule</text>
+</g>
+<!-- AppComponent&#45;&gt;AppModule -->
+<g id="edge1" class="edge">
+<title>AppComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M385.5544,-198.1061C385.5544,-198.1061 385.5544,-216.991 385.5544,-216.991"/>
+<polygon fill="#000000" stroke="#000000" points="382.0544,-216.9909 385.5544,-226.991 389.0544,-216.991 382.0544,-216.9909"/>
+</g>
+<!-- AppComponent  -->
+<g id="node4" class="node">
+<title>AppComponent </title>
+<polygon fill="#80b1d3" stroke="#000000" points="407.439,-328 298.561,-328 298.561,-292 407.439,-292 407.439,-328"/>
+<text text-anchor="middle" x="353" y="-305.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppComponent </text>
+</g>
+<!-- AppModule&#45;&gt;AppComponent  -->
+<g id="edge3" class="edge">
+<title>AppModule&#45;&gt;AppComponent </title>
+<path fill="none" stroke="#000000" stroke-dasharray="1,5" d="M353,-263.1061C353,-263.1061 353,-281.991 353,-281.991"/>
+<polygon fill="#000000" stroke="#000000" points="349.5001,-281.9909 353,-291.991 356.5001,-281.991 349.5001,-281.9909"/>
+</g>
+<!-- DatetimePopupModule -->
+<g id="node3" class="node">
+<title>DatetimePopupModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="352.1456,-198 349.1456,-202 328.1456,-202 325.1456,-198 205.8544,-198 205.8544,-162 352.1456,-162 352.1456,-198"/>
+<text text-anchor="middle" x="279" y="-175.8" font-family="Times,serif" font-size="14.00" fill="#000000">DatetimePopupModule</text>
+</g>
+<!-- DatetimePopupModule&#45;&gt;AppModule -->
+<g id="edge2" class="edge">
+<title>DatetimePopupModule&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M331.7472,-198.1061C331.7472,-198.1061 331.7472,-216.991 331.7472,-216.991"/>
+<polygon fill="#000000" stroke="#000000" points="328.2473,-216.9909 331.7472,-226.991 335.2473,-216.991 328.2473,-216.9909"/>
+</g>
+<!-- DatetimePopupComponent  -->
+<g id="node7" class="node">
+<title>DatetimePopupComponent </title>
+<polygon fill="#fb8072" stroke="#000000" points="195.9278,-122 24.0722,-122 24.0722,-86 195.9278,-86 195.9278,-122"/>
+<text text-anchor="middle" x="110" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">DatetimePopupComponent </text>
+</g>
+<!-- DatetimePopupModule&#45;&gt;DatetimePopupComponent  -->
+<g id="edge6" class="edge">
+<title>DatetimePopupModule&#45;&gt;DatetimePopupComponent </title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M212.878,-161.9891C212.878,-139.5148 212.878,-104 212.878,-104 212.878,-104 206.3488,-104 206.3488,-104"/>
+<polygon fill="#000000" stroke="#000000" points="206.3489,-100.5001 196.3488,-104 206.3488,-107.5001 206.3489,-100.5001"/>
+</g>
+<!-- DatetimePopupComponent -->
+<g id="node5" class="node">
+<title>DatetimePopupComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="524.4283,-122 355.5717,-122 355.5717,-86 524.4283,-86 524.4283,-122"/>
+<text text-anchor="middle" x="440" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">DatetimePopupComponent</text>
+</g>
+<!-- DatetimePopupComponent&#45;&gt;DatetimePopupModule -->
+<g id="edge4" class="edge">
+<title>DatetimePopupComponent&#45;&gt;DatetimePopupModule</title>
+<path fill="none" stroke="#000000" d="M355.6382,-104C349.1887,-104 345.122,-104 345.122,-104 345.122,-104 345.122,-151.9891 345.122,-151.9891"/>
+<polygon fill="#000000" stroke="#000000" points="341.6221,-151.989 345.122,-161.9891 348.6221,-151.9891 341.6221,-151.989"/>
+</g>
+<!-- OffClickDirective -->
+<g id="node6" class="node">
+<title>OffClickDirective</title>
+<polygon fill="#ffffb3" stroke="#000000" points="337.8431,-122 220.1569,-122 220.1569,-86 337.8431,-86 337.8431,-122"/>
+<text text-anchor="middle" x="279" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">OffClickDirective</text>
+</g>
+<!-- OffClickDirective&#45;&gt;DatetimePopupModule -->
+<g id="edge5" class="edge">
+<title>OffClickDirective&#45;&gt;DatetimePopupModule</title>
+<path fill="none" stroke="#000000" d="M279,-122.0109C279,-122.0109 279,-151.855 279,-151.855"/>
+<polygon fill="#000000" stroke="#000000" points="275.5001,-151.8549 279,-161.855 282.5001,-151.855 275.5001,-151.8549"/>
+</g>
+</g>
+</svg>
+
+                </div>
+                <i id="fullscreen" class="fa fa-expand module-graph-fullscreen-btn" aria-hidden="true"></i>
+                <div class="btn-group">
+                    <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
+                    <button id="reset" class="btn btn-default btn-sm">Reset</button>
+                    <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
+                </div>
+            </div>
+<div class="container-fluid overview">
+    <div class="row">
+            <div class="col-sm-3">
+                <div class="card text-center">
+                    <div class="card-block">
+                        <h4 class="card-title"><span class="fa fa-archive"></span></h4>
+                        <p class="card-text">
+                            <a href="./modules.html">2 modules</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card text-center">
+                    <div class="card-block">
+                        <h4 class="card-title"><span class="fa fa-cogs"></span></h4>
+                        <p class="card-text">2 components</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card text-center">
+                    <div class="card-block">
+                        <h4 class="card-title"><span class="fa fa-code"></span></h4>
+                        <p class="card-text">1 directive</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card text-center">
+                    <div class="card-block">
+                        <h4 class="card-title"><span class="fa fa-file-code-o"></span></h4>
+                        <p class="card-text">1 class</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card text-center">
+                    <div class="card-block">
+                        <h4 class="card-title"><span class="fa fa-info"></span></h4>
+                        <p class="card-text">1 interface</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<script src="js/libs/svg-pan-zoom.min.js"></script>
+<script src="js/svg-pan-zoom.controls.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 0;</script>
+
+       <script src="./js/search/search.js"></script>
+       <script src="./js/search/lunr.min.js"></script>
+       <script src="./js/search/search-lunr.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+       <script src="./js/search/search_index.js"></script>
+
+    </body>
+</html>

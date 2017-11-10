@@ -7,7 +7,8 @@ import {DatetimePopupButtonOptions, IDatetimePopupButtonOptions} from './button-
         <div class="dropdown" [ngClass]="{ 'show': showPopup === true }" (offClick)="offClick($event)">
             <ul class="dropdown-menu" role="menu" [ngClass]="{ 'show': showPopup === true }">
                 <li class="my-2 mx-2">
-                    <datepicker *ngIf="showDate" [(ngModel)]="value" 
+                    <datepicker *ngIf="showDate" 
+                                [(ngModel)]="localValue" 
                                 (ngModelChange)="onPickerChange()"
                                 [showWeeks]="showWeeks"
                                 [datepickerMode]="datepickerMode"
@@ -15,7 +16,7 @@ import {DatetimePopupButtonOptions, IDatetimePopupButtonOptions} from './button-
                                 [maxDate]="maxDate"
                                 [dateDisabled]="dateDisabled"></datepicker>
                     <timepicker *ngIf="showTime" 
-                                [(ngModel)]="value" 
+                                [(ngModel)]="localValue" 
                                 (ngModelChange)="onPickerChange()"></timepicker>
                 </li>
                 <li class="mx-2 mb-2">
@@ -85,6 +86,8 @@ export class DatetimePopupComponent implements OnChanges {
     @Input()
     closeButton: IDatetimePopupButtonOptions;
 
+    localValue: Date = new Date();
+
     ngOnChanges(changes: any) {
         if (!this.nowButton) {
             this.nowButton = new DatetimePopupButtonOptions('Now');
@@ -97,6 +100,10 @@ export class DatetimePopupComponent implements OnChanges {
         if (!this.closeButton) {
             this.closeButton = new DatetimePopupButtonOptions('Close');
         }
+
+        if (this.value != null) {
+            this.localValue = this.value;
+        }
     }
 
     offClick() {
@@ -105,16 +112,20 @@ export class DatetimePopupComponent implements OnChanges {
     }
 
     onNow() {
-        this.value = new Date();
-        this.valueChange.emit(this.value);
+        this.localValue = new Date();
+        this.onPickerChange();
     }
 
     onClear() {
-        this.value = null;
-        this.valueChange.emit(this.value);
+        this.valueChange.emit(null);
     }
 
     onPickerChange() {
-        this.valueChange.emit(this.value);
+        this.valueChange.emit(this.localValue);
+
+        // close when value changed if only using date
+        if (this.showDate === true && this.showTime === false) {
+            this.offClick();
+        }
     }
 }
