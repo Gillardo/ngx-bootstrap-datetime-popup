@@ -3,7 +3,7 @@ Date and time popup picker using ngx-bootstrap library
 
 This is currently a very simple date time picker, with only the features i needed for a project that i use this in.  Happy to add more features
 
-Simple example in demo folder, found [here](https://rawgit.com/Gillardo/ngx-bootstrap-datetime-popup/master/demo/src/index.html)
+Simple example in demo folder, found [here](https://rawgit.com/Gillardo/ngx-bootstrap-datetime-popup/master/playground/index.html)
 
 To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules
 
@@ -16,6 +16,23 @@ Now add the component to your HTML.
 ```
 <datetime-popup [(value)]="myDate"></datetime-popup>
 ```
+
+I have now added code so you can change attributes on the "Clear", "Now" and "Close" buttons.  in order to do this, you must use an object that implements the same properties as the IDatetimePopupButtonOptions interface
+
+```
+export interface IDatetimePopupButtonOptions {
+    // should the button be shown
+    show: boolean;
+
+    // What text label should it be given
+    label: string;
+
+    // css classes to be used, default is 'btn btn-sm btn-secondary'
+    cssClass: string;
+}
+```
+
+Look at the example and you can see how i have changed the "Close" button style.
 
 Since i dont really like the style of the ngx-bootstrap datePicker, you can override the css like any other style, here is an example
 

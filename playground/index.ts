@@ -1,4 +1,14 @@
-import { Component, ViewContainerRef } from '@angular/core';
+/**
+ * This is only for local test
+ */
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { Component } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {DatetimePopupModule} from 'ngx-bootstrap-datetime-popup';
 
 @Component({
     selector: 'my-app',
@@ -18,7 +28,9 @@ import { Component, ViewContainerRef } from '@angular/core';
                     <datetime-popup [value]="myDate" (valueChange)="onValueChange($event)"
                                     [(showPopup)]="showPicker"
                                     [showDate]="showDate"
-                                    [showTime]="showTime"></datetime-popup>
+                                    [showTime]="showTime"
+                                    [closeButton]="closeButton"
+                                    ></datetime-popup>
                 </div>
             </div>
             Formatted with pipe: {{ myDate | date: 'dd-MM-yyyy HH:mm:ss' }}
@@ -28,15 +40,11 @@ import { Component, ViewContainerRef } from '@angular/core';
 
 export class AppComponent {
 
-    showPicker: boolean = false;
+    showPicker = false;
     myDate: Date = new Date();
-    showDate: boolean = true;
-    showTime: boolean = true;
-
-    public constructor(
-        private viewContainerRef: ViewContainerRef) {
-
-    }
+    showDate = true;
+    showTime = true;
+    closeButton: any = { show: true, label: 'Close Me!', cssClass: 'btn btn-sm btn-primary' };
 
     onTogglePicker() {
         if (this.showPicker === false) {
@@ -48,3 +56,23 @@ export class AppComponent {
         this.myDate = val;
     }
 }
+
+@NgModule({
+    imports: [
+        CommonModule,
+        BrowserModule,
+        FormsModule,
+        DatetimePopupModule
+    ],
+    declarations: [
+        AppComponent
+    ],
+    bootstrap: [
+        AppComponent
+    ]
+})
+
+export class AppModule {
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);

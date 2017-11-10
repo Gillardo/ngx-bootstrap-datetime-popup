@@ -1,3 +1,38 @@
-export * from './datetime-popup.component';
-export * from './datetime-popup.module';
-export declare class DatetimePopupModule {}
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { DatepickerModule, DatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule, TimepickerConfig } from 'ngx-bootstrap/timepicker';
+
+import { DatetimePopupComponent } from './datetime-popup.component';
+import { OffClickDirective } from './offclick.directive';
+import { IDatetimePopupButtonOptions } from './button-options';
+
+@NgModule({
+    imports: [
+        CommonModule,
+        FormsModule,
+        DatepickerModule.forRoot(),
+        TimepickerModule.forRoot()
+    ],
+    declarations: [
+        DatetimePopupComponent,
+        OffClickDirective
+    ],
+    exports: [
+        DatetimePopupComponent
+    ],
+    entryComponents: [
+        DatetimePopupComponent
+    ],
+    providers: [
+        DatepickerConfig,
+        TimepickerConfig
+    ]
+})
+
+export class DatetimePopupModule { }
+
+export {
+    IDatetimePopupButtonOptions
+}

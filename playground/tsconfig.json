@@ -1,16 +1,14 @@
 {
   "compilerOptions": {
+    "outDir": "../.playground",
     "target": "es5",
     "module": "commonjs",
-    "sourceMap": true,
     "moduleResolution": "node",
+    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["es2015", "dom"],
-    "outDir": "./src",
-    "declaration": true
-  },
-  "angularCompilerOptions": {
-    "skipTemplateCodegen": true
+    "lib": [ "es2015", "dom" ],
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
   }
 }

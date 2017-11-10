@@ -19,7 +19,7 @@ datetime-popup > .dropdown .bg-faded {
 
 datetime-popup > .dropdown datepicker .btn-secondary {
     background-color: #fff;
-    border-color: #dddddd;
+    border: 0;
     color: #000;
 }
 

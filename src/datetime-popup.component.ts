@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
+import {DatetimePopupButtonOptions, IDatetimePopupButtonOptions} from './button-options';
 
 @Component({
     selector: 'datetime-popup',
@@ -13,15 +14,23 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
                                 [minDate]="minDate"
                                 [maxDate]="maxDate"
                                 [dateDisabled]="dateDisabled"></datepicker>
-                    <timepicker *ngIf="showTime" [(ngModel)]="value" (ngModelChange)="onPickerChange()"></timepicker>
+                    <timepicker *ngIf="showTime" 
+                                [(ngModel)]="value" 
+                                (ngModelChange)="onPickerChange()"></timepicker>
                 </li>
                 <li class="mx-2 mb-2">
                     <span class="btn-group pull-left">
-                        <button class="btn btn-secondary btn-sm" (click)="onNow()">Now</button>
-                        <button class="btn btn-secondary btn-sm" (click)="onClear()">Clear</button>
+                        <button (click)="onNow()" 
+                                *ngIf="nowButton.show" 
+                                [ngClass]="nowButton.cssClass">{{ nowButton.label }}</button>
+                        <button (click)="onClear()" 
+                                *ngIf="clearButton.show" 
+                                [ngClass]="clearButton.cssClass">{{ clearButton.label }}</button>
                     </span>
                     <span class="btn-group pull-right">
-                        <button class="btn btn-secondary btn-sm" (click)="offClick()">Close</button>
+                        <button (click)="offClick()" 
+                                *ngIf="closeButton.show" 
+                                [ngClass]="closeButton.cssClass">{{ closeButton.label }}</button>
                     </span>
                 </li>
             </ul>
@@ -29,7 +38,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     `
 })
 
-export class DatetimePopupComponent {
+export class DatetimePopupComponent implements OnChanges {
 
     @Input()
     value: Date;
@@ -53,7 +62,7 @@ export class DatetimePopupComponent {
     showWeeks = false;
 
     @Input()
-    datepickerMode: string = 'day';
+    datepickerMode = 'day';
 
     @Input()
     initDate: Date = null;
@@ -66,6 +75,29 @@ export class DatetimePopupComponent {
 
     @Input()
     dateDisabled: any[] = [];
+
+    @Input()
+    nowButton: IDatetimePopupButtonOptions;
+
+    @Input()
+    clearButton: IDatetimePopupButtonOptions;
+
+    @Input()
+    closeButton: IDatetimePopupButtonOptions;
+
+    ngOnChanges(changes: any) {
+        if (!this.nowButton) {
+            this.nowButton = new DatetimePopupButtonOptions('Now');
+        }
+
+        if (!this.clearButton) {
+            this.clearButton = new DatetimePopupButtonOptions('Clear');
+        }
+
+        if (!this.closeButton) {
+            this.closeButton = new DatetimePopupButtonOptions('Close');
+        }
+    }
 
     offClick() {
         this.showPopup = false;
