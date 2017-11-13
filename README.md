@@ -97,6 +97,8 @@ datetime-popup > .dropdown .glyphicon.hidden {
 ```
 
 ![image](https://user-images.githubusercontent.com/7406381/32741384-fc825748-c89d-11e7-94d9-063cd36bcac9.png)
+![image](https://user-images.githubusercontent.com/7406381/32741493-5668de62-c89e-11e7-98ce-1f718a98c3f8.png)
+![image](https://user-images.githubusercontent.com/7406381/32741456-327c57f4-c89e-11e7-9f16-9023e4df5500.png)
 
 
 If you want more features please create a PR as i am a little struck for time at the moment.  Happy coding!
