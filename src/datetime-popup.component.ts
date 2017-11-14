@@ -101,7 +101,13 @@ export class DatetimePopupComponent implements OnChanges {
             this.closeButton = new DatetimePopupButtonOptions('Close');
         }
 
-        if (this.value != null) {
+        // user maybe typing a value into an input box, so would come in as string
+        if (typeof this.value === 'string') {
+            // check if the string is a valid date
+            if (!isNaN(new Date(this.value).getTime())) {
+                this.localValue = new Date(this.value);
+            }
+        } else if (this.value) {
             this.localValue = this.value;
         }
     }

@@ -33,7 +33,9 @@ import {DatetimePopupModule} from 'ngx-bootstrap-datetime-popup';
                                     ></datetime-popup>
                 </div>
             </div>
-            Formatted with pipe: {{ myDate | date: 'dd-MM-yyyy HH:mm:ss' }}
+            <div *ngIf="isValid()">
+                Formatted with pipe: {{ myDate | date: 'dd-MM-yyyy HH:mm:ss' }}    
+            </div>
         </div>
     `
 })
@@ -54,6 +56,10 @@ export class AppComponent {
 
     onValueChange(val: Date) {
         this.myDate = val;
+    }
+
+    isValid(): boolean {
+        return this.myDate && (typeof this.myDate !== 'string') && !isNaN(this.myDate.getTime());
     }
 }
 
