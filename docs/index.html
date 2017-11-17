@@ -308,8 +308,11 @@
 <h1 id="ngx-bootstrap-datetime-popup">ngx-bootstrap-datetime-popup</h1>
 <p>Date and time popup picker using ngx-bootstrap library</p>
 <p>This is currently a very simple date time picker, with only the features i needed for a project that i use this in.  Happy to add more features</p>
-<p>Simple example in demo folder, found <a href="https://rawgit.com/Gillardo/ngx-bootstrap-datetime-popup/master/playground/index.html">here</a></p>
-<p>To use the component, import the <code>DatetimePopupModule</code> via your .ts code, and add it to your modules</p>
+<p><img src="https://user-images.githubusercontent.com/7406381/32741384-fc825748-c89d-11e7-94d9-063cd36bcac9.png" alt="image" class="img-responsive"
+<img src="https://user-images.githubusercontent.com/7406381/32741493-5668de62-c89e-11e7-98ce-1f718a98c3f8.png" alt="image" class="img-responsive"
+<img src="https://user-images.githubusercontent.com/7406381/32741456-327c57f4-c89e-11e7-9f16-9023e4df5500.png" alt="image" class="img-responsive"</p>
+<p>Simple example in demo folder, which can also be found on plunkr <a href="https://plnkr.co/edit/nYNzcgXd9Wz8pxMsPY29">https://plnkr.co/edit/nYNzcgXd9Wz8pxMsPY29</a></p>
+<p>To use the component, import the <code>DatetimePopupModule</code> via your .ts code, and add it to your modules, using <code>.forRoot</code> method, similar to <code>ngx-bootstrap</code></p>
 <pre class="line-numbers"><code class="language-none">import { DatetimePopupModule } from &#39;ngx-bootstrap-datetime-popup&#39;;</code></pre><p>Now add the component to your HTML.</p>
 <pre class="line-numbers"><code class="language-none">&lt;datetime-popup [(value)]=&quot;myDate&quot;&gt;&lt;/datetime-popup&gt;</code></pre><p>I have now added code so you can change attributes on the &quot;Clear&quot;, &quot;Now&quot; and &quot;Close&quot; buttons.  in order to do this, you must use an object that implements the same properties as the IDatetimePopupButtonOptions interface</p>
 <pre class="line-numbers"><code class="language-none">export interface IDatetimePopupButtonOptions {
@@ -321,8 +324,8 @@
 
     // css classes to be used, default is &#39;btn btn-sm btn-secondary&#39;
     cssClass: string;
-}</code></pre><p>Look at the example and you can see how i have changed the &quot;Close&quot; button style.</p>
-<p>Since i dont really like the style of the ngx-bootstrap datePicker, you can override the css like any other style, here is an example</p>
+}</code></pre><p>The component accepts 3 inputs <code>closeButton</code>, <code>clearButton</code> and <code>nowButton</code>, so you can bind your options like so:</p>
+<pre class="line-numbers"><code class="language-none">&lt;datetime-popup [(value)]=&quot;myDate&quot; [closeButton]=&quot;myCloseOptions&quot;&gt;&lt;/datetime-popup&gt;</code></pre><p>Since i dont really like the style of the ngx-bootstrap datePicker, you can override the css like any other style, here is an example</p>
 <p>This css also overrides the glyphicon icons that are no longer used in bootstrap 4.</p>
 <pre class="line-numbers"><code class="language-none">datetime-popup &gt; .dropdown .glyphicon {
     display: inline-block;

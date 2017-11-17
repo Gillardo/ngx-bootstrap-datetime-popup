@@ -408,6 +408,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                 <a href="#isValid">isValid</a>
+                            </li>
+                            <li>
                                  <a href="#onTogglePicker">onTogglePicker</a>
                             </li>
                             <li>
@@ -434,6 +437,38 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <a name="isValid"></a>
+                            <span class="name"><b> isValid</b><a href="#isValid"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>isValid()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">playground/index.ts:61</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <a name="onTogglePicker"></a>
                             <span class="name"><b> onTogglePicker</b><a href="#onTogglePicker"><span class="fa fa-link"></span></a></span>
                         </td>
@@ -447,7 +482,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">playground/index.ts:49</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">playground/index.ts:51</a></div>
                                 </td>
                             </tr>
     
@@ -479,7 +514,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">playground/index.ts:55</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">playground/index.ts:57</a></div>
                                 </td>
                             </tr>
     
@@ -552,7 +587,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">playground/index.ts:47</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">playground/index.ts:49</a></div>
                                 </td>
                             </tr>
     
@@ -581,7 +616,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">playground/index.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">playground/index.ts:46</a></div>
                                 </td>
                             </tr>
     
@@ -609,7 +644,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">playground/index.ts:45</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">playground/index.ts:47</a></div>
                                 </td>
                             </tr>
     
@@ -637,7 +672,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">playground/index.ts:43</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">playground/index.ts:45</a></div>
                                 </td>
                             </tr>
     
@@ -665,7 +700,7 @@
                         </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">playground/index.ts:46</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">playground/index.ts:48</a></div>
                                 </td>
                             </tr>
     
@@ -710,7 +745,9 @@ import {DatetimePopupModule} from &#x27;ngx-bootstrap-datetime-popup&#x27;;
                                     &gt;&lt;/datetime-popup&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            Formatted with pipe: {{ myDate | date: &#x27;dd-MM-yyyy HH:mm:ss&#x27; }}
+            &lt;div *ngIf&#x3D;&quot;isValid()&quot;&gt;
+                Formatted with pipe: {{ myDate | date: &#x27;dd-MM-yyyy HH:mm:ss&#x27; }}    
+            &lt;/div&gt;
         &lt;/div&gt;
     &#x60;
 })
@@ -732,6 +769,10 @@ export class AppComponent {
     onValueChange(val: Date) {
         this.myDate &#x3D; val;
     }
+
+    isValid(): boolean {
+        return this.myDate &amp;&amp; (typeof this.myDate !&#x3D;&#x3D; &#x27;string&#x27;) &amp;&amp; !isNaN(this.myDate.getTime());
+    }
 }
 
 @NgModule({
@@ -739,7 +780,7 @@ export class AppComponent {
         CommonModule,
         BrowserModule,
         FormsModule,
-        DatetimePopupModule
+        DatetimePopupModule.forRoot()
     ],
     declarations: [
         AppComponent

@@ -86,7 +86,7 @@ export class DatetimePopupComponent implements OnChanges {
     @Input()
     closeButton: IDatetimePopupButtonOptions;
 
-    localValue: Date = new Date();
+    localValue: Date = null;
 
     ngOnChanges(changes: any) {
         if (!this.nowButton) {
@@ -127,6 +127,7 @@ export class DatetimePopupComponent implements OnChanges {
     }
 
     onPickerChange() {
+        console.log('picker changed...');
         this.valueChange.emit(this.localValue);
 
         // close when value changed if only using date

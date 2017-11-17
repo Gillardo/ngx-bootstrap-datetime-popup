@@ -890,7 +890,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/datetime-popup.component.ts:109</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">src/datetime-popup.component.ts:115</a></div>
                                 </td>
                             </tr>
     
@@ -922,7 +922,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="119" class="link-to-prism">src/datetime-popup.component.ts:119</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/datetime-popup.component.ts:125</a></div>
                                 </td>
                             </tr>
     
@@ -954,7 +954,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/datetime-popup.component.ts:114</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="120" class="link-to-prism">src/datetime-popup.component.ts:120</a></div>
                                 </td>
                             </tr>
     
@@ -986,7 +986,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">src/datetime-popup.component.ts:123</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/datetime-popup.component.ts:129</a></div>
                                 </td>
                             </tr>
     
@@ -1131,7 +1131,7 @@ export class DatetimePopupComponent implements OnChanges {
     @Input()
     closeButton: IDatetimePopupButtonOptions;
 
-    localValue: Date &#x3D; new Date();
+    localValue: Date &#x3D; null;
 
     ngOnChanges(changes: any) {
         if (!this.nowButton) {
@@ -1146,7 +1146,13 @@ export class DatetimePopupComponent implements OnChanges {
             this.closeButton &#x3D; new DatetimePopupButtonOptions(&#x27;Close&#x27;);
         }
 
-        if (this.value !&#x3D; null) {
+        // user maybe typing a value into an input box, so would come in as string
+        if (typeof this.value &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
+            // check if the string is a valid date
+            if (!isNaN(new Date(this.value).getTime())) {
+                this.localValue &#x3D; new Date(this.value);
+            }
+        } else if (this.value) {
             this.localValue &#x3D; this.value;
         }
     }
@@ -1166,6 +1172,7 @@ export class DatetimePopupComponent implements OnChanges {
     }
 
     onPickerChange() {
+        console.log(&#x27;picker changed...&#x27;);
         this.valueChange.emit(this.localValue);
 
         // close when value changed if only using date

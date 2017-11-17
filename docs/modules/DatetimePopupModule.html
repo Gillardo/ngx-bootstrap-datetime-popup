@@ -454,7 +454,7 @@
 
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
-import { NgModule } from &#x27;@angular/core&#x27;;
+import { NgModule, ModuleWithProviders } from &#x27;@angular/core&#x27;;
 import { FormsModule } from &#x27;@angular/forms&#x27;;
 import { DatepickerModule, DatepickerConfig } from &#x27;ngx-bootstrap/datepicker&#x27;;
 import { TimepickerModule, TimepickerConfig } from &#x27;ngx-bootstrap/timepicker&#x27;;
@@ -479,14 +479,20 @@ import { IDatetimePopupButtonOptions } from &#x27;./button-options&#x27;;
     ],
     entryComponents: [
         DatetimePopupComponent
-    ],
-    providers: [
-        DatepickerConfig,
-        TimepickerConfig
     ]
 })
 
-export class DatetimePopupModule { }
+export class DatetimePopupModule {
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: DatetimePopupModule,
+            providers: [
+                DatepickerConfig,
+                TimepickerConfig
+            ]
+        };
+    }
+}
 
 export {
     IDatetimePopupButtonOptions
