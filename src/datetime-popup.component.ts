@@ -127,7 +127,6 @@ export class DatetimePopupComponent implements OnChanges {
     }
 
     onPickerChange() {
-        console.log('picker changed...');
         this.valueChange.emit(this.localValue);
 
         // close when value changed if only using date
