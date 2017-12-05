@@ -1043,13 +1043,13 @@
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import {Component, EventEmitter, Input, OnChanges, Output} from &#x27;@angular/core&#x27;;
-import {DatetimePopupButtonOptions, IDatetimePopupButtonOptions} from &#x27;./button-options&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Component, EventEmitter, Input, OnChanges, Output } from &#x27;@angular/core&#x27;;
+import { DatetimePopupButtonOptions, IDatetimePopupButtonOptions } from &#x27;./button-options&#x27;;
 
 @Component({
     selector: &#x27;datetime-popup&#x27;,
     template: &#x60;
-        &lt;div class&#x3D;&quot;dropdown&quot; [ngClass]&#x3D;&quot;{ &#x27;show&#x27;: showPopup &#x3D;&#x3D;&#x3D; true }&quot; (offClick)&#x3D;&quot;offClick($event)&quot;&gt;
+        &lt;div class&#x3D;&quot;dropdown&quot; [ngClass]&#x3D;&quot;{ &#x27;show&#x27;: showPopup &#x3D;&#x3D;&#x3D; true }&quot; (offClick)&#x3D;&quot;offClick()&quot;&gt;
             &lt;ul class&#x3D;&quot;dropdown-menu&quot; role&#x3D;&quot;menu&quot; [ngClass]&#x3D;&quot;{ &#x27;show&#x27;: showPopup &#x3D;&#x3D;&#x3D; true }&quot;&gt;
                 &lt;li class&#x3D;&quot;my-2 mx-2&quot;&gt;
                     &lt;datepicker *ngIf&#x3D;&quot;showDate&quot; 
@@ -1066,15 +1066,15 @@ import {DatetimePopupButtonOptions, IDatetimePopupButtonOptions} from &#x27;./bu
                 &lt;/li&gt;
                 &lt;li class&#x3D;&quot;mx-2 mb-2&quot;&gt;
                     &lt;span class&#x3D;&quot;btn-group pull-left&quot;&gt;
-                        &lt;button (click)&#x3D;&quot;onNow()&quot; 
+                        &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;onNow()&quot; 
                                 *ngIf&#x3D;&quot;nowButton.show&quot; 
                                 [ngClass]&#x3D;&quot;nowButton.cssClass&quot;&gt;{{ nowButton.label }}&lt;/button&gt;
-                        &lt;button (click)&#x3D;&quot;onClear()&quot; 
+                        &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;onClear()&quot; 
                                 *ngIf&#x3D;&quot;clearButton.show&quot; 
                                 [ngClass]&#x3D;&quot;clearButton.cssClass&quot;&gt;{{ clearButton.label }}&lt;/button&gt;
                     &lt;/span&gt;
                     &lt;span class&#x3D;&quot;btn-group pull-right&quot;&gt;
-                        &lt;button (click)&#x3D;&quot;offClick()&quot; 
+                        &lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;offClick()&quot; 
                                 *ngIf&#x3D;&quot;closeButton.show&quot; 
                                 [ngClass]&#x3D;&quot;closeButton.cssClass&quot;&gt;{{ closeButton.label }}&lt;/button&gt;
                     &lt;/span&gt;
@@ -1172,7 +1172,6 @@ export class DatetimePopupComponent implements OnChanges {
     }
 
     onPickerChange() {
-        console.log(&#x27;picker changed...&#x27;);
         this.valueChange.emit(this.localValue);
 
         // close when value changed if only using date
