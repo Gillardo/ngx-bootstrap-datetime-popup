@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
-import {DatetimePopupButtonOptions, IDatetimePopupButtonOptions} from './button-options';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { DatetimePopupButtonOptions, IDatetimePopupButtonOptions } from './button-options';
 
 @Component({
     selector: 'datetime-popup',
@@ -21,15 +21,15 @@ import {DatetimePopupButtonOptions, IDatetimePopupButtonOptions} from './button-
                 </li>
                 <li class="mx-2 mb-2">
                     <span class="btn-group pull-left">
-                        <button (click)="onNow()" 
+                        <button type="button" (click)="onNow()" 
                                 *ngIf="nowButton.show" 
                                 [ngClass]="nowButton.cssClass">{{ nowButton.label }}</button>
-                        <button (click)="onClear()" 
+                        <button type="button" (click)="onClear()" 
                                 *ngIf="clearButton.show" 
                                 [ngClass]="clearButton.cssClass">{{ clearButton.label }}</button>
                     </span>
                     <span class="btn-group pull-right">
-                        <button (click)="offClick()" 
+                        <button type="button" (click)="offClick()" 
                                 *ngIf="closeButton.show" 
                                 [ngClass]="closeButton.cssClass">{{ closeButton.label }}</button>
                     </span>
@@ -112,7 +112,7 @@ export class DatetimePopupComponent implements OnChanges {
         }
     }
 
-    offClick() {
+    offClick($event?: any) {
         this.showPopup = false;
         this.showPopupChange.emit(false);
     }
