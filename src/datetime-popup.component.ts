@@ -4,7 +4,7 @@ import { DatetimePopupButtonOptions, IDatetimePopupButtonOptions } from './butto
 @Component({
     selector: 'datetime-popup',
     template: `
-        <div class="dropdown" [ngClass]="{ 'show': showPopup === true }" (offClick)="offClick($event)">
+        <div class="dropdown" [ngClass]="{ 'show': showPopup === true }" (offClick)="offClick()">
             <ul class="dropdown-menu" role="menu" [ngClass]="{ 'show': showPopup === true }">
                 <li class="my-2 mx-2">
                     <datepicker *ngIf="showDate" 
@@ -112,7 +112,7 @@ export class DatetimePopupComponent implements OnChanges {
         }
     }
 
-    offClick($event?: any) {
+    offClick() {
         this.showPopup = false;
         this.showPopupChange.emit(false);
     }
