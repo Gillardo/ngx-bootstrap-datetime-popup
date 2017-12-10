@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
+    "sourceMap": true,
     "module": "es2015",
     "target": "es5",
     "baseUrl": ".",
@@ -18,6 +19,7 @@
     "types": []
   },
   "angularCompilerOptions": {
+    "genDir": "../build",
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
