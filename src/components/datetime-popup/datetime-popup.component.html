@@ -11,6 +11,8 @@
                   [dateDisabled]="dateDisabled"></datepicker>
       <timepicker *ngIf="showTime"
                   [(ngModel)]="localValue"
+                  [min]="minDate"
+                  [max]="maxDate"
                   (ngModelChange)="onPickerChange()"></timepicker>
     </li>
     <li class="mx-2 mb-2">
