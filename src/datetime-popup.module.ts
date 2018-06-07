@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DatepickerModule, DatepickerConfig } from 'ngx-bootstrap';
-import { TimepickerModule, TimepickerConfig } from 'ngx-bootstrap/timepicker';
+import { TimepickerModule, TimepickerConfig, TimepickerActions } from 'ngx-bootstrap/timepicker';
 
 import { DatetimePopupComponent, OffClickDirective } from './components';
 
@@ -30,8 +30,9 @@ export class DatetimePopupModule {
         return {
             ngModule: DatetimePopupModule,
             providers: [
-                DatepickerConfig,
-                TimepickerConfig
+              DatepickerConfig,
+              TimepickerConfig,
+              TimepickerActions
             ]
         };
     }
