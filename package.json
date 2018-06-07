@@ -43,7 +43,7 @@
     "clean:all": "npm run clean:tmp && rimraf node_modules",
     "clean:tmp": "rimraf coverage dist tmp docs",
     "codecov": "cat coverage/lcov.info | codecov",
-    "docs": "compodoc -p tsconfig.json -d docs --disableCoverage --disablePrivateOrInternalSupport",
+    "docs": "compodoc -p tsconfig.json -d docs --disableCoverage --disablePrivate --disableProtected --disableInternal --disableLifeCycleHooks",
     "explorer": "source-map-explorer ./dist/index.umd.js",
     "gh-pages": "rimraf docs && npm run docs && gh-pages -d docs",
     "lint": "npm run tslint 'src/**/*.ts'",
@@ -53,12 +53,11 @@
     "prebuild:watch": "rimraf dist tmp",
     "prepublishOnly": "npm run ci",
     "preversion": "npm run ci",
-    "test": "karma start",
-    "test:watch": "karma start --auto-watch --no-single-run",
     "tslint": "tslint"
   },
   "dependencies": {
     "ngx-bootstrap": "^3.0.0",
+    "rxjs-compat": "^6.2.0",
     "webpack-cli": "^3.0.3"
   },
   "peerDependencies": {

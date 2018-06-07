@@ -2,6 +2,7 @@ import * as webpack from 'webpack';
 import * as path from 'path';
 
 export default {
+  mode: 'production',
   resolve: {
     extensions: [ '.ts', '.js', '.json' ]
   },
