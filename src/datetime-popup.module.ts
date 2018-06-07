@@ -10,8 +10,8 @@ import { DatetimePopupComponent, OffClickDirective } from './components';
     imports: [
         CommonModule,
         FormsModule,
-        DatepickerModule.forRoot(),
-        TimepickerModule.forRoot()
+        DatepickerModule,
+        TimepickerModule
     ],
     declarations: [
         DatetimePopupComponent,
