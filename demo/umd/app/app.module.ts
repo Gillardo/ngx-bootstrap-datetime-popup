@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { DatetimePopupModule } from 'DatetimePopupModule';
 
 @NgModule({
-  imports: [ CommonModule, FormsModule, BrowserModule, DatetimePopupModule.forRoot() ],
+  imports: [ CommonModule, FormsModule, BrowserModule, DatetimePopupModule ],
   declarations: [ AppComponent ],
   bootstrap: [ AppComponent ]
 })

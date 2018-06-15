@@ -9,7 +9,7 @@ import { DatetimePopupModule } from '../../lib';
   imports: [
     FormsModule,
     BrowserModule,
-    DatetimePopupModule.forRoot()
+    DatetimePopupModule
   ],
   declarations: [ AppComponent ],
   bootstrap: [ AppComponent ]
