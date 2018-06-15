@@ -1,6 +1,6 @@
 {
   "name": "ngx-bootstrap-datetime-popup",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "Datetime popup using ngx-bootstrap",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.js",
