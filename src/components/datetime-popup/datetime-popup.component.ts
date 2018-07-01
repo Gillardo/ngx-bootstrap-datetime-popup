@@ -1,5 +1,14 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges, OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
 import { IDatetimePopupButtonOptions } from '../../interfaces/button-options';
+import { BsDropdownDirective } from 'ngx-bootstrap/dropdown';
 
 @Component({
   selector: 'datetime-popup',
@@ -7,6 +16,9 @@ import { IDatetimePopupButtonOptions } from '../../interfaces/button-options';
 })
 
 export class DatetimePopupComponent implements OnChanges {
+
+  @ViewChild('dropdown')
+  public dropdown: BsDropdownDirective;
 
   @Input()
   public value: Date;
@@ -54,6 +66,11 @@ export class DatetimePopupComponent implements OnChanges {
   public closeButton: IDatetimePopupButtonOptions;
 
   public localValue: Date = null;
+  public isOpening = false;
+
+  constructor(private elementRef: ElementRef) {
+
+  }
 
   public ngOnChanges(changes: any) {
     if (!this.nowButton) {
@@ -77,9 +94,23 @@ export class DatetimePopupComponent implements OnChanges {
     } else if (this.value) {
       this.localValue = this.value;
     }
+
+    // toggle if open
+    if (changes.showPopup) {
+      if (changes.showPopup.currentValue === true) {
+        this.dropdown.show();
+      } else {
+        this.dropdown.hide();
+      }
+    }
   }
 
-  public offClick() {
+  public onOpenChange() {
+    this.isOpening = true;
+    setTimeout(() => this.isOpening = false, 250);
+  }
+
+  public onHidden() {
     this.showPopup = false;
     this.showPopupChange.emit(false);
   }
@@ -93,12 +124,20 @@ export class DatetimePopupComponent implements OnChanges {
     this.valueChange.emit(null);
   }
 
+  public onClose() {
+    this.showPopup = false;
+    this.showPopupChange.emit(false);
+  }
+
   public onPickerChange() {
+    if (this.isOpening === true) {
+      return;
+    }
+
     this.valueChange.emit(this.localValue);
 
-    // close when value changed if only using date
     if (this.showDate === true && this.showTime === false) {
-      this.offClick();
+      this.onHidden();
     }
   }
 }

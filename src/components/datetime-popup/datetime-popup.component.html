@@ -1,5 +1,5 @@
-<div class="dropdown" [ngClass]="{ 'show': showPopup === true }" (offClick)="offClick()">
-  <ul class="dropdown-menu" role="menu" [ngClass]="{ 'show': showPopup === true }">
+<div dropdown #dropdown="bs-dropdown" container="body" (isOpenChange)="onOpenChange($event)" (onHidden)="onHidden()">
+  <ul class="datetime-popup dropdown-menu" role="menu" *dropdownMenu (offClick)="onClose()">
     <li class="my-2 mx-2">
       <datepicker *ngIf="showDate"
                   [(ngModel)]="localValue"
@@ -17,15 +17,18 @@
     </li>
     <li class="mx-2 mb-2">
       <span class="btn-group pull-left">
-          <button type="button" (click)="onNow()"
+          <button type="button"
+                  (click)="onNow()"
                   *ngIf="nowButton.show"
                   [ngClass]="nowButton.cssClass">{{ nowButton.label }}</button>
-          <button type="button" (click)="onClear()"
+          <button type="button"
+                  (click)="onClear()"
                   *ngIf="clearButton.show"
                   [ngClass]="clearButton.cssClass">{{ clearButton.label }}</button>
       </span>
       <span class="btn-group pull-right">
-          <button type="button" (click)="offClick()"
+          <button type="button"
+                  (click)="onClose()"
                   *ngIf="closeButton.show"
                   [ngClass]="closeButton.cssClass">{{ closeButton.label }}</button>
       </span>

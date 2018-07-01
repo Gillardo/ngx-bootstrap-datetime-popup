@@ -48,7 +48,7 @@ Since i dont really like the style of the ngx-bootstrap datePicker, you can over
 This css also overrides the glyphicon icons that are no longer used in bootstrap 4.
 
 ```
-datetime-popup > .dropdown .glyphicon {
+datetime-popup.dropdown .glyphicon {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
@@ -57,46 +57,46 @@ datetime-popup > .dropdown .glyphicon {
     -moz-osx-font-smoothing: grayscale;
 }
 
-datetime-popup > .dropdown timepicker {
+datetime-popup.dropdown timepicker {
     display: flex;
     justify-content: center;
 }
 
-datetime-popup > .dropdown .bg-faded {
+datetime-popup.dropdown .bg-faded {
     border:0;
     background-color: #fff;
 }
 
-datetime-popup > .dropdown datepicker button {
+datetime-popup.dropdown datepicker button {
     border:0;
     background-color: #fff;
 }
 
-datetime-popup > .dropdown datepicker button.active {
+datetime-popup.dropdown datepicker button.active {
     background-color: #ddd;
 }
 
-datetime-popup > .dropdown .glyphicon.glyphicon-remove-circle:before {
+datetime-popup.dropdown .glyphicon.glyphicon-remove-circle:before {
     content: "\f05c";
 }
 
-datetime-popup > .dropdown .glyphicon.glyphicon-chevron-down:before {
+datetime-popup.dropdown .glyphicon.glyphicon-chevron-down:before {
     content: "\f078";
 }
 
-datetime-popup > .dropdown .glyphicon.glyphicon-chevron-up:before {
+datetime-popup.dropdown .glyphicon.glyphicon-chevron-up:before {
     content: "\f077";
 }
 
-datetime-popup > .dropdown .glyphicon.glyphicon-chevron-left:before {
+datetime-popup.dropdown .glyphicon.glyphicon-chevron-left:before {
     content: "\f053";
 }
 
-datetime-popup > .dropdown .glyphicon.glyphicon-chevron-right:before {
+datetime-popup.dropdown .glyphicon.glyphicon-chevron-right:before {
     content: "\f054";
 }
 
-datetime-popup > .dropdown .glyphicon.hidden {
+datetime-popup.dropdown .glyphicon.hidden {
     display: none !important;
 }
 ```

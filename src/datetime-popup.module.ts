@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DatepickerModule, DatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { TimepickerModule, TimepickerConfig, TimepickerActions } from 'ngx-bootstrap/timepicker';
+import { BsDropdownModule, BsDropdownConfig, BsDropdownState } from 'ngx-bootstrap/dropdown';
 
 import { DatetimePopupComponent, OffClickDirective } from './components';
 
@@ -11,7 +12,8 @@ import { DatetimePopupComponent, OffClickDirective } from './components';
     CommonModule,
     FormsModule,
     DatepickerModule,
-    TimepickerModule
+    TimepickerModule,
+    BsDropdownModule
   ],
   declarations: [
     DatetimePopupComponent,
@@ -26,7 +28,9 @@ import { DatetimePopupComponent, OffClickDirective } from './components';
   providers: [
     DatepickerConfig,
     TimepickerConfig,
-    TimepickerActions
+    TimepickerActions,
+    BsDropdownConfig,
+    BsDropdownState
   ]
 })
 
