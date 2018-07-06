@@ -21,6 +21,9 @@ export class DatetimePopupComponent implements OnChanges {
   public dropdown: BsDropdownDirective;
 
   @Input()
+  public appendTo: string = undefined;
+
+  @Input()
   public value: Date;
 
   @Output()
