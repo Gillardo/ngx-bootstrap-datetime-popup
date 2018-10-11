@@ -1,7 +1,7 @@
 import {
   Component,
   ElementRef,
-  EventEmitter,
+  EventEmitter, HostListener,
   Input,
   OnChanges, OnInit,
   Output,
@@ -69,7 +69,8 @@ export class DatetimePopupComponent implements OnChanges {
   public closeButton: IDatetimePopupButtonOptions;
 
   public localValue: Date = null;
-  public isOpening = false;
+  public isOpening: boolean = false;
+  public isDropUp: boolean = false;
 
   constructor(private elementRef: ElementRef) {
 
@@ -101,15 +102,36 @@ export class DatetimePopupComponent implements OnChanges {
     // toggle if open
     if (changes.showPopup) {
       if (changes.showPopup.currentValue === true) {
-        this.dropdown.show();
+        this.showPopup = true;
       } else {
-        this.dropdown.hide();
+        this.showPopup = false;
       }
     }
   }
 
+  @HostListener('window:scroll', [])
+  public onWindowScroll() {
+    const nativeEl: HTMLElement = this.elementRef.nativeElement;
+    const clientRect: ClientRect = nativeEl.getBoundingClientRect();
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const offsetTop = clientRect.top + window.pageYOffset;
+    const height = clientRect.height;
+    const dropdownEl: HTMLElement = nativeEl.children.item(0) as HTMLElement;
+    const menuEl: HTMLElement = dropdownEl.children.item(0) as HTMLElement;
+
+    // get the style
+    const display = menuEl.style.display;
+    menuEl.style.display = 'block';
+
+    const menuHeight = menuEl.getBoundingClientRect().height;
+    menuEl.style.display = display;
+
+    this.isDropUp = (offsetTop + height + menuHeight > scrollTop + document.documentElement.clientHeight);
+  }
+
   public onOpenChange() {
     this.isOpening = true;
+
     setTimeout(() => this.isOpening = false, 250);
   }
 
