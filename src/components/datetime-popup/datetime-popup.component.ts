@@ -48,6 +48,9 @@ export class DatetimePopupComponent implements OnChanges {
   public showMeridian: boolean = false;
 
   @Input()
+  public showSeconds: boolean = false;
+
+  @Input()
   public datepickerMode: string = 'day';
 
   @Input()
