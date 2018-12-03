@@ -30,22 +30,25 @@ export class DatetimePopupComponent implements OnChanges {
   public valueChange = new EventEmitter();
 
   @Input()
-  public showPopup = false;
+  public showPopup: boolean = false;
 
   @Output()
   public showPopupChange = new EventEmitter();
 
   @Input()
-  public showDate = true;
+  public showDate: boolean = true;
 
   @Input()
-  public showTime = true;
+  public showTime: boolean = true;
 
   @Input()
-  public showWeeks = false;
+  public showWeeks: boolean = false;
 
   @Input()
-  public datepickerMode = 'day';
+  public showMeridian: boolean = false;
+
+  @Input()
+  public datepickerMode: string = 'day';
 
   @Input()
   public initDate: Date = null;
