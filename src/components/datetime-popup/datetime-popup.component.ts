@@ -3,11 +3,11 @@ import {
   ElementRef,
   EventEmitter, HostListener,
   Input,
-  OnChanges, OnInit,
+  OnChanges,
   Output,
   ViewChild
 } from '@angular/core';
-import { IDatetimePopupButtonOptions } from '../../interfaces/button-options';
+import { IDatetimePopupButtonOptions } from '../../interfaces';
 import { BsDropdownDirective } from 'ngx-bootstrap/dropdown';
 
 @Component({
@@ -106,16 +106,18 @@ export class DatetimePopupComponent implements OnChanges {
     }
 
     // toggle if open
-    if (changes.showPopup) {
-      if (changes.showPopup.currentValue === true) {
-        this.showPopup = true;
-      } else {
-        this.showPopup = false;
+    if (changes.showPopup && this.dropdown) {
+      if (changes.showPopup.currentValue === true && this.dropdown.isOpen === false) {
+        this.onWindowScroll();
+        this.dropdown.show();
+      } else if (changes.showPopup.currentValue === false && this.dropdown.isOpen === true) {
+        this.dropdown.hide();
       }
     }
   }
 
   @HostListener('window:scroll', [])
+  @HostListener('window:resize', [])
   public onWindowScroll() {
     const nativeEl: HTMLElement = this.elementRef.nativeElement;
     const clientRect: ClientRect = nativeEl.getBoundingClientRect();
@@ -123,22 +125,27 @@ export class DatetimePopupComponent implements OnChanges {
     const offsetTop = clientRect.top + window.pageYOffset;
     const height = clientRect.height;
     const dropdownEl: HTMLElement = nativeEl.children.item(0) as HTMLElement;
-    const menuEl: HTMLElement = dropdownEl.children.item(0) as HTMLElement;
+    const menuEl: HTMLElement = dropdownEl.children.length > 0 ? dropdownEl.children.item(0) as HTMLElement : null;
+    let menuHeight = this.showDate && this.showTime ? 402 : this.showDate ? 300 : 102;
 
-    // get the style
-    const display = menuEl.style.display;
-    menuEl.style.display = 'block';
+    if (menuEl != null) {
+      // get the style
+      const display = menuEl.style.display;
+      menuEl.style.display = 'block';
 
-    const menuHeight = menuEl.getBoundingClientRect().height;
-    menuEl.style.display = display;
+      menuHeight = menuEl.getBoundingClientRect().height;
+      menuEl.style.display = display;
+    }
 
-    this.isDropUp = (offsetTop + height + menuHeight > scrollTop + document.documentElement.clientHeight);
+    this.isDropUp = ((offsetTop + height + menuHeight) > (scrollTop + document.documentElement.clientHeight));
   }
 
   public onOpenChange() {
-    this.isOpening = true;
+    if (this.dropdown.isOpen === true) {
+      this.isOpening = true;
 
-    setTimeout(() => this.isOpening = false, 250);
+      setTimeout(() => this.isOpening = false, 250);
+    }
   }
 
   public onHidden() {
