@@ -13,6 +13,9 @@
                   [(ngModel)]="localValue"
                   [min]="minDate"
                   [max]="maxDate"
+                  [hourStep]="hourStep"
+                  [minuteStep]="minuteStep"
+                  [secondsStep]="secondsStep"
                   [showSeconds]="showSeconds"
                   [showMeridian]="showMeridian"
                   (ngModelChange)="onPickerChange()"></timepicker>
