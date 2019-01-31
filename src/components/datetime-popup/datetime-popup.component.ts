@@ -73,13 +73,13 @@ export class DatetimePopupComponent implements OnChanges {
 
   @Input()
   public closeButton: IDatetimePopupButtonOptions;
-  
+
   @Input()
   public minuteStep: number = 5;
-  
+
   @Input()
   public hourStep: number = 1;
-  
+
   @Input()
   public secondsStep: number = 1;
 
