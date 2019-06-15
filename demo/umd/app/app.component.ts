@@ -24,14 +24,13 @@ import { Component } from '@angular/core';
                 </div>
             </div>
             <div *ngIf="isValid()">
-                Formatted with pipe: {{ myDate | date: 'dd-MM-yyyy HH:mm:ss' }}    
+                Formatted with pipe: {{ myDate | date: 'dd-MM-yyyy HH:mm:ss' }}
             </div>
         </div>
     `
 })
 
 export class AppComponent {
-
     showPicker = false;
     myDate: Date = new Date();
     showDate = true;

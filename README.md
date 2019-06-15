@@ -9,11 +9,29 @@ This is currently a very simple date time picker, with only the features i neede
 
 Simple example in demo folder, which can also be found on plunkr https://plnkr.co/edit/nYNzcgXd9Wz8pxMsPY29
 
-To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules  
-NOTE: The forRoot method has been removed as this for creating a larger bundle size!
+To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules using the .forRoot() function
 
 ```
-import { DatetimePopupModule } from 'ngx-bootstrap-datetime-popup';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+
+import { DatetimePopupModule } from '../../lib';
+
+@NgModule({
+  imports: [
+    FormsModule,
+    BrowserModule,
+    DatetimePopupModule.forRoot()
+  ],
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule {
+  
+}
+
 ```
 
 Now add the component to your HTML.

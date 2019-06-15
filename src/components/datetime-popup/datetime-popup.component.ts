@@ -17,7 +17,7 @@ import { BsDropdownDirective } from 'ngx-bootstrap/dropdown';
 
 export class DatetimePopupComponent implements OnChanges {
 
-  @ViewChild('dropdown')
+  @ViewChild('dropdown', { static: true })
   public dropdown: BsDropdownDirective;
 
   @Input()
