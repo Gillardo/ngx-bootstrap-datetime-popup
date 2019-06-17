@@ -9,20 +9,26 @@ This is currently a very simple date time picker, with only the features i neede
 
 Simple example in demo folder, which can also be found on plunkr https://plnkr.co/edit/nYNzcgXd9Wz8pxMsPY29
 
-To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules using the .forRoot() function
+To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules using the .forRoot() function.  You must also import the modules `datepicker`, `timepicker` and `dropdown` from `ngx-bootstrap` as there are services that are used
 
 ```
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { DatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { DatetimePopupModule } from 'ngx-bootstrap-datetime-popup';
 
-import { DatetimePopupModule } from '../../lib';
+import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
     FormsModule,
     BrowserModule,
+    BsDropdownModule.forRoot(),
+    DatepickerModule.forRoot(),
+    TimepickerModule.forRoot(),
     DatetimePopupModule.forRoot()
   ],
   declarations: [ AppComponent ],
