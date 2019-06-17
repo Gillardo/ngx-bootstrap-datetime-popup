@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { ComponentLoaderFactory } from 'ngx-bootstrap/component-loader';
+import { PositioningService } from 'ngx-bootstrap/positioning';
 import { DatepickerModule, DatepickerConfig } from 'ngx-bootstrap/datepicker';
-import { TimepickerModule, TimepickerConfig, TimepickerActions } from 'ngx-bootstrap/timepicker';
+import { TimepickerModule, TimepickerConfig, TimepickerActions, TimepickerStore } from 'ngx-bootstrap/timepicker';
 import { BsDropdownModule, BsDropdownConfig, BsDropdownState } from 'ngx-bootstrap/dropdown';
 
 import { DatetimePopupComponent, OffClickDirective } from './components';
@@ -25,20 +27,19 @@ import { DatetimePopupComponent, OffClickDirective } from './components';
   ],
   entryComponents: [
     DatetimePopupComponent
+  ],
+  providers: [
+    ComponentLoaderFactory,
+    PositioningService,
+    DatepickerConfig,
+    TimepickerConfig,
+    TimepickerActions,
+    TimepickerStore,
+    BsDropdownConfig,
+    BsDropdownState
   ]
 })
 
 export class DatetimePopupModule {
-  public static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: DatetimePopupModule,
-      providers: [
-        DatepickerConfig,
-        TimepickerConfig,
-        TimepickerActions,
-        BsDropdownConfig,
-        BsDropdownState
-      ]
-    };
-  }
+
 }
