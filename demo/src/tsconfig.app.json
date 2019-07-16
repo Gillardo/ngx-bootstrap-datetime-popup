@@ -1,0 +1,35 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "baseUrl": "./",
+    "module": "es2015",
+    "types": [],
+    "paths": {
+      "@shared:/*": [
+        "../../shared/src/*"
+      ],
+      "@data:/*": [
+        "data/*"
+      ],
+      "@models:/*": [
+        "../../shared/models/*"
+      ],
+      "@interfaces:/*": [
+        "../../shared/data/*"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableIvy": false
+  },
+  "include": [
+    "./main.ts",
+    "./polyfills.ts",
+    "./app/**/*.ts"
+  ],
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ]
+}

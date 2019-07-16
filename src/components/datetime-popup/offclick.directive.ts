@@ -5,19 +5,18 @@ import { Directive, ElementRef, EventEmitter, OnDestroy, OnInit, Output } from '
 })
 
 export class OffClickDirective implements OnInit, OnDestroy {
-    @Output()
-    public offClick = new EventEmitter();
+  @Output()
+  public offClick = new EventEmitter();
 
   public eventHandler: any;
-
-    constructor(
-        private elementRef: ElementRef) {
+    constructor(private elementRef: ElementRef) {
 
     }
 
     public ngOnInit() {
         this.eventHandler = ($event: any) => {
             $event.stopPropagation();
+
             if (!this.elementRef.nativeElement.contains($event.target)) {
                 this.offClick.emit(null);
             }
