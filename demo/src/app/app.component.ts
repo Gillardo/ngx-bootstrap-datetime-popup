@@ -16,12 +16,6 @@ export class AppComponent {
 
   public onTogglePicker() {
     this.showPopup = !this.showPopup;
-
-    if (this.showPopup === true) {
-      this.dropdown.show();
-    } else {
-      this.dropdown.hide();
-    }
   }
 
   public onHidden() {
