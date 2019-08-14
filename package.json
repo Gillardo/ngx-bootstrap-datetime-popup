@@ -1,6 +1,6 @@
 {
   "name": "ngx-bootstrap-datetime-popup",
-  "version": "5.0.0",
+  "version": "4.4.0",
   "description": "Datetime popup using ngx-bootstrap",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.js",
@@ -56,7 +56,7 @@
     "tslint": "tslint"
   },
   "dependencies": {
-    "ngx-bootstrap": "^5.0.0",
+    "ngx-bootstrap": "^4.3.0",
     "rxjs-compat": "^6.5.2",
     "webpack-cli": "^3.3.4"
   },

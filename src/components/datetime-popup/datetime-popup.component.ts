@@ -164,7 +164,7 @@ export class DatetimePopupComponent implements OnChanges {
 
   public onNow() {
     this.localValue = new Date();
-    this.onPickerChange();
+    this.onPickerChange('timepicker');
   }
 
   public onClear() {
@@ -176,9 +176,18 @@ export class DatetimePopupComponent implements OnChanges {
     this.showPopupChange.emit(false);
   }
 
-  public onPickerChange() {
+  public onPickerChange(picker: string) {
     if (this.isOpening === true) {
       return;
+    }
+
+    if (picker === 'datepicker' && this.value != null) {
+      const hours = this.value.getHours();
+      const minutes = this.value.getMinutes();
+      const seconds = this.value.getSeconds();
+      const milliseconds = this.value.getMilliseconds();
+
+      this.localValue.setHours(hours, minutes, seconds, milliseconds);
     }
 
     this.valueChange.emit(this.localValue);

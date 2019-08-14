@@ -2,7 +2,7 @@
   <ul class="datetime-popup dropdown-menu" role="menu" (offClick)="onClose()" [ngClass]="{ 'show': dropdown.isOpen === true, 'body-container': appendTo == 'body', 'dropdown': !isDropUp, 'dropup': isDropUp }" *dropdownMenu>
     <li class="my-2 mx-2">
       <datepicker [(ngModel)]="localValue"
-                  (ngModelChange)="onPickerChange()"
+                  (ngModelChange)="onPickerChange('datepicker')"
                   [showWeeks]="showWeeks"
                   [datepickerMode]="datepickerMode"
                   [minDate]="minDate"
@@ -17,7 +17,7 @@
                   [secondsStep]="secondsStep"
                   [showSeconds]="showSeconds"
                   [showMeridian]="showMeridian"
-                  (ngModelChange)="onPickerChange()"></timepicker>
+                  (ngModelChange)="onPickerChange('timepicker')"></timepicker>
     </li>
     <li class="mx-2 mb-2">
       <span class="btn-group float-left">

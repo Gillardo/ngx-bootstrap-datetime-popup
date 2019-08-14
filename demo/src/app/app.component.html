@@ -1,16 +1,6 @@
 <div class="row">
   <div class="col-18 col-md-4">
     <div class="input-group">
-
-<!--      <div (onHidden)="onHidden()" dropdown #dropdown="bs-dropdown">-->
-<!--        <ul class="datetime-popup dropdown-menu" role="menu" [ngClass]="{ 'show': dropdown.isOpen === true, 'dropdown': !isDropUp, 'dropup': isDropUp }" *dropdownMenu>-->
-<!--          <li class="my-2 mx-2">-->
-<!--            <bs-datepicker-inline [(ngModel)]="localValue"-->
-<!--                        (ngModelChange)="onPickerChange()"></bs-datepicker-inline>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </div>-->
-
       <datetime-popup [(value)]="localValue" [showPopup]="showPopup"></datetime-popup>
 
       <input class="form-control" name="myDate" />
@@ -23,3 +13,7 @@
     </div>
   </div>
 </div>
+<div>
+  Selected date: {{ localValue }}
+</div>
+
