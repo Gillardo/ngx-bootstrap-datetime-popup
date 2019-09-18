@@ -1,7 +1,8 @@
 <div [container]="appendTo" (isOpenChange)="onOpenChange()" (onHidden)="onHidden()" [dropup]="isDropUp" dropdown #dropdown="bs-dropdown">
   <ul class="datetime-popup dropdown-menu" role="menu" (offClick)="onClose()" [ngClass]="{ 'show': dropdown.isOpen === true, 'body-container': appendTo == 'body', 'dropdown': !isDropUp, 'dropup': isDropUp }" *dropdownMenu>
     <li class="my-2 mx-2">
-      <datepicker [(ngModel)]="localValue"
+      <datepicker *ngIf="showDate"
+                  [(ngModel)]="localValue"
                   (ngModelChange)="onPickerChange('datepicker')"
                   [showWeeks]="showWeeks"
                   [datepickerMode]="datepickerMode"
