@@ -1,4 +1,4 @@
-NOTE: DO NOT USE 5.0.0 WITH NGX-BOOTSTRAP 5.0.0 UNTIL THIS ISSUE HAS BEEN FIXED https://github.com/valor-software/ngx-bootstrap/issues/5330.  Until then, continue to use 4.3.0 and ngx-bootstrap v4.X.X
+NOTE: DO NOT USE 5.0.0 THIS IS BROKEN!! PLEASE USE 5.0.1 WITH NGX-BOOTSTRAP 5.0.0.  If you require ngx-bootstrap v4+ then continue to use 4.3.0+  
 
 # ngx-bootstrap-datetime-popup
 Date and time popup picker using ngx-bootstrap library
