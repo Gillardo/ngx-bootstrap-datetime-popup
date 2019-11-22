@@ -7,22 +7,8 @@ import { BsDropdownDirective } from 'ngx-bootstrap';
 })
 
 export class AppComponent {
-  @ViewChild('dropdown', { static: true })
-  public dropdown: BsDropdownDirective;
-
-  private localValue: Date = null;
-  private showPopup: boolean = false;
-  private isDropUp: boolean = false;
-
-  public onTogglePicker() {
-    this.showPopup = !this.showPopup;
-  }
-
-  public onHidden() {
-    this.showPopup = false;
-  }
-
-  public onPickerChange() {
-    this.onHidden();
-  }
+  private localValue1: Date = null;
+  private showPicker1: boolean = false;
+  private localValue2: Date = null;
+  private showPicker2: boolean = false;
 }

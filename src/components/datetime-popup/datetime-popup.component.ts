@@ -114,12 +114,10 @@ export class DatetimePopupComponent implements OnChanges {
       this.localValue = this.value;
     }
 
-    // toggle if open
     if (changes.showPopup && this.dropdown) {
-      if (changes.showPopup.currentValue === true && this.dropdown.isOpen === false) {
-        this.onWindowScroll();
+      if (changes.showPopup.currentValue === true) {
         this.dropdown.show();
-      } else if (changes.showPopup.currentValue === false && this.dropdown.isOpen === true) {
+      } else if (changes.showPopup.currentValue === false) {
         this.dropdown.hide();
       }
     }
@@ -146,20 +144,23 @@ export class DatetimePopupComponent implements OnChanges {
       menuEl.style.display = display;
     }
 
-    this.isDropUp = ((offsetTop + height + menuHeight) > (scrollTop + document.documentElement.clientHeight));
-  }
-
-  public onOpenChange() {
-    if (this.dropdown.isOpen === true) {
-      this.isOpening = true;
-
-      setTimeout(() => this.isOpening = false, 250);
+    if ((offsetTop - menuHeight) <= 0) {
+      this.isDropUp = false;
+    } else {
+      this.isDropUp = ((offsetTop + height + menuHeight) > (scrollTop + document.documentElement.clientHeight));
     }
   }
 
-  public onHidden() {
-    this.showPopup = false;
-    this.showPopupChange.emit(false);
+  public onOpenChange(opened: boolean) {
+    if (opened === true) {
+      this.isOpening = true;
+      this.onWindowScroll();
+      this.dropdown.show();
+
+      setTimeout(() => this.isOpening = false, 250);
+    } else {
+      this.showPopupChange.emit(false);
+    }
   }
 
   public onNow() {
@@ -172,7 +173,10 @@ export class DatetimePopupComponent implements OnChanges {
   }
 
   public onClose() {
-    this.showPopup = false;
+    this.showPopupChange.emit(false);
+  }
+
+  public onOffClick($event: any) {
     this.showPopupChange.emit(false);
   }
 
@@ -193,7 +197,7 @@ export class DatetimePopupComponent implements OnChanges {
     this.valueChange.emit(this.localValue);
 
     if (this.showDate === true && this.showTime === false) {
-      this.onHidden();
+      this.dropdown.hide();
     }
   }
 }

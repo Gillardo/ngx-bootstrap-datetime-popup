@@ -7,22 +7,24 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { DatetimePopupModule } from '../../../dist';
 
 import { AppComponent } from './app.component';
+import { DateComponent } from './date.component';
 
 @NgModule({
-    imports: [
-      BrowserModule,
-      FormsModule,
-      DatepickerModule.forRoot(),
-      TimepickerModule.forRoot(),
-      BsDropdownModule.forRoot(),
-      DatetimePopupModule.forRoot()
-    ],
-    declarations: [
-        AppComponent
-    ],
-    bootstrap: [
-        AppComponent
-    ]
+  imports: [
+    BrowserModule,
+    FormsModule,
+    DatepickerModule.forRoot(),
+    TimepickerModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    DatetimePopupModule.forRoot()
+  ],
+  declarations: [
+    AppComponent,
+    DateComponent
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 
 export class AppModule {

@@ -1,19 +1,18 @@
 <div class="row">
-  <div class="col-18 col-md-4">
-    <div class="input-group">
-      <datetime-popup [(value)]="localValue" [showPopup]="showPopup"></datetime-popup>
-
-      <input class="form-control" name="myDate" />
-
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" (click)="onTogglePicker()">
-          Open
-        </button>
-      </div>
-    </div>
+  <div class="col-12 col-md-6">
+    <input-date [(value)]="localValue1" [(showPicker)]="showPicker1"></input-date>
   </div>
 </div>
 <div>
-  Selected date: {{ localValue }}
+  Show Picker: {{ showPicker1 }}<br>Selected date: {{ localValue1 }}
+</div>
+
+<div class="row">
+  <div class="col-12 col-md-6">
+    <input-date [(value)]="localValue2" [(showPicker)]="showPicker2"></input-date>
+  </div>
+</div>
+<div>
+  Show Picker: {{ showPicker2 }}<br>Selected date: {{ localValue2 }}
 </div>
 

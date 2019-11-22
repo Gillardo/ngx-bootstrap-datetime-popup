@@ -17,7 +17,7 @@ export class OffClickDirective implements OnInit, OnDestroy {
         this.eventHandler = ($event: any) => {
             $event.stopPropagation();
 
-            if (!this.elementRef.nativeElement.contains($event.target)) {
+            if (!this.elementRef.nativeElement.contains($event.target) && $event.target.localName !== 'button') {
                 this.offClick.emit(null);
             }
         };
