@@ -6,6 +6,9 @@
   "module": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+  },
   "keywords": [
     "angular",
     "angular8",
