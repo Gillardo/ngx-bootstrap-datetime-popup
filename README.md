@@ -9,7 +9,7 @@ This is currently a very simple date time picker, with only the features i neede
 ![image](https://user-images.githubusercontent.com/7406381/32741493-5668de62-c89e-11e7-98ce-1f718a98c3f8.png)
 ![image](https://user-images.githubusercontent.com/7406381/32741456-327c57f4-c89e-11e7-9f16-9023e4df5500.png)
 
-Simple example in demo folder, which can also be found on plunkr https://plnkr.co/edit/nYNzcgXd9Wz8pxMsPY29
+Simple example in demo folder, which can also be found on github pages at https://gillardo.github.io/ngx-bootstrap-datetime-popup/
 
 To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules using the .forRoot() function.  You must also import the modules `datepicker`, `timepicker` and `dropdown` from `ngx-bootstrap` as there are services that are used
 

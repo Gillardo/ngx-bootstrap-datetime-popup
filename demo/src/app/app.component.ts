@@ -7,8 +7,10 @@ import { BsDropdownDirective } from 'ngx-bootstrap';
 })
 
 export class AppComponent {
-  private localValue1: Date = null;
-  private showPicker1: boolean = false;
-  private localValue2: Date = null;
-  private showPicker2: boolean = false;
+  public localValue1: Date = null;
+  public showPicker1: boolean = false;
+  public localValue2: Date = null;
+  public showPicker2: boolean = false;
+  public localValue3: Date = null;
+  public showPicker3: boolean = false;
 }

@@ -1,5 +1,4 @@
 <div class="input-group">
-  {{ showPicker }}
   <datetime-popup [value]="value"
                   (valueChange)="onPopupChange($event)"
                   [(showPopup)]="showPicker"
@@ -20,7 +19,7 @@
 
   <div class="input-group-append">
       <button class="btn btn-outline-secondary" (click)="onTogglePicker($event, !showPicker)">
-          <i class="fal fa-calendar-alt" aria-hidden="true"></i>
+          <i class="fa fa-calendar" aria-hidden="true"></i>
       </button>
   </div>
 </div>

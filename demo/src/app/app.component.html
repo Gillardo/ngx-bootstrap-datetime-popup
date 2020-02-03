@@ -1,18 +1,33 @@
+<hr />
+<h3>Select a date</h3>
 <div class="row">
   <div class="col-12 col-md-6">
     <input-date [(value)]="localValue1" [(showPicker)]="showPicker1"></input-date>
   </div>
 </div>
 <div>
-  Show Picker: {{ showPicker1 }}<br>Selected date: {{ localValue1 }}
+  <strong>Selected date:</strong> {{ localValue1 }}
 </div>
 
+<hr />
+<h3>Select a time</h3>
 <div class="row">
   <div class="col-12 col-md-6">
-    <input-date [(value)]="localValue2" [(showPicker)]="showPicker2"></input-date>
+    <input-date [(value)]="localValue2" [(showPicker)]="showPicker2" [showDate]="false" [showTime]="true"></input-date>
   </div>
 </div>
 <div>
-  Show Picker: {{ showPicker2 }}<br>Selected date: {{ localValue2 }}
+  <strong>Selected date:</strong> {{ localValue2 }}
+</div>
+
+<hr />
+<h3>Select a date and time</h3>
+<div class="row">
+  <div class="col-12 col-md-6">
+    <input-date [(value)]="localValue3" [(showPicker)]="showPicker3" [showDate]="true" [showTime]="true"></input-date>
+  </div>
+</div>
+<div>
+  <strong>Selected date:</strong> {{ localValue3 }}
 </div>
 
