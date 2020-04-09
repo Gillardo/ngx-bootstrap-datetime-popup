@@ -1,27 +1,130 @@
-# NgxBootstrapDatetimePopup
+NOTE: DO NOT USE 5.0.0 THIS IS BROKEN!! PLEASE USE 5.0.1 WITH NGX-BOOTSTRAP 5.0.0.  If you require ngx-bootstrap v4+ then continue to use 4.3.0+  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+# ngx-bootstrap-datetime-popup
+Date and time popup picker using ngx-bootstrap library
 
-## Development server
+This is currently a very simple date time picker, with only the features i needed for a project that i use this in.  Happy to add more features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![image](https://user-images.githubusercontent.com/7406381/32741384-fc825748-c89d-11e7-94d9-063cd36bcac9.png)
+![image](https://user-images.githubusercontent.com/7406381/32741493-5668de62-c89e-11e7-98ce-1f718a98c3f8.png)
+![image](https://user-images.githubusercontent.com/7406381/32741456-327c57f4-c89e-11e7-9f16-9023e4df5500.png)
 
-## Code scaffolding
+Simple example in demo folder, which can also be found on github pages at https://gillardo.github.io/ngx-bootstrap-datetime-popup/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules using the .forRoot() function.  You must also import the modules `datepicker`, `timepicker` and `dropdown` from `ngx-bootstrap` as there are services that are used
 
-## Build
+```
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { DatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { DatetimePopupModule } from 'ngx-bootstrap-datetime-popup';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+import { AppComponent } from './app.component';
 
-## Running unit tests
+@NgModule({
+  imports: [
+    FormsModule,
+    BrowserModule,
+    BsDropdownModule.forRoot(),
+    DatepickerModule.forRoot(),
+    TimepickerModule.forRoot(),
+    DatetimePopupModule.forRoot()
+  ],
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule {
+  
+}
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
 
-## Running end-to-end tests
+Now add the component to your HTML.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+<datetime-popup [(value)]="myDate"></datetime-popup>
+```
 
-## Further help
+I have now added code so you can change attributes on the "Clear", "Now" and "Close" buttons.  in order to do this, you must use an object that implements the same properties as the IDatetimePopupButtonOptions interface
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+export interface IDatetimePopupButtonOptions {
+    // should the button be shown
+    show: boolean;
+
+    // What text label should it be given
+    label: string;
+
+    // css classes to be used, default is 'btn btn-sm btn-secondary'
+    cssClass: string;
+}
+```
+
+The component accepts 3 inputs `closeButton`, `clearButton` and `nowButton`, so you can bind your options like so:
+
+```
+<datetime-popup [(value)]="myDate" [closeButton]="myCloseOptions"></datetime-popup>
+```
+
+Since i dont really like the style of the ngx-bootstrap datePicker, you can override the css like any other style, here is an example
+
+This css also overrides the glyphicon icons that are no longer used in bootstrap 4.
+
+```
+datetime-popup.dropdown .glyphicon {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+datetime-popup.dropdown timepicker {
+    display: flex;
+    justify-content: center;
+}
+
+datetime-popup.dropdown .bg-faded {
+    border:0;
+    background-color: #fff;
+}
+
+datetime-popup.dropdown datepicker button {
+    border:0;
+    background-color: #fff;
+}
+
+datetime-popup.dropdown datepicker button.active {
+    background-color: #ddd;
+}
+
+datetime-popup.dropdown .glyphicon.glyphicon-remove-circle:before {
+    content: "\f05c";
+}
+
+datetime-popup.dropdown .glyphicon.glyphicon-chevron-down:before {
+    content: "\f078";
+}
+
+datetime-popup.dropdown .glyphicon.glyphicon-chevron-up:before {
+    content: "\f077";
+}
+
+datetime-popup.dropdown .glyphicon.glyphicon-chevron-left:before {
+    content: "\f053";
+}
+
+datetime-popup.dropdown .glyphicon.glyphicon-chevron-right:before {
+    content: "\f054";
+}
+
+datetime-popup.dropdown .glyphicon.hidden {
+    display: none !important;
+}
+```
+
+If you want more features please create a PR as i am a little struck for time at the moment.  Happy coding!
