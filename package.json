@@ -1,6 +1,6 @@
 {
   "name": "ngx-bootstrap-datetime-popup",
-  "version": "5.1.0-beta.4",
+  "version": "5.1.0-beta.5",
   "author": {
     "name": "Darren Gillard",
     "email": "darren.gillard81@gmail.com"
@@ -39,7 +39,7 @@
     "rxjs": "^6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "^0.10.2",
-    "ngx-bootstrap": "^5.6.0"
+    "ngx-bootstrap": "^5.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.900.0",
