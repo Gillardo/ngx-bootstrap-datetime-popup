@@ -2,7 +2,12 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/ngx-bootstrap-datetime-popup",
   "lib": {
-    "entryFile": "src/public-api.ts"
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "ngx-bootstrap/datepicker" : "datepicker",
+      "ngx-bootstrap/timepicker" : "timepicker",
+      "ngx-bootstrap/dropdown" : "dropdown"
+    }
   },
   "whitelistedNonPeerDependencies": [
     "angular",
