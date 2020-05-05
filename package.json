@@ -1,6 +1,18 @@
 {
   "name": "ngx-bootstrap-datetime-popup",
   "version": "5.1.0",
+  "author": {
+    "name": "Darren Gillard",
+    "email": "darren.gillard81@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gillardo/ngx-bootstrap-datetime-popup"
+  },
+  "bugs": {
+    "url": "https://github.com/gillardo/ngx-bootstrap-datetime-popup/issues"
+  },
+  "url": "https://github.com/gillardo/ngx-bootstrap-datetime-popup#readme",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,7 +23,6 @@
     "watch": "ng serve demo --port 4300",
     "gh-pages": "ng deploy demo --no-silent"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.0",
     "@angular/common": "~9.1.0",
