@@ -30,10 +30,10 @@
   },
   "url": "https://github.com/gillardo/ngx-bootstrap-datetime-popup#readme",
   "peerDependencies": {
-    "@angular/common": "~9.1.0",
-    "@angular/core": "~9.1.0",
-    "@angular/forms": "~9.1.0",
-    "ngx-bootstrap": "~5.6.1",
+    "@angular/common": "^9.0.0",
+    "@angular/core": "^9.0.0",
+    "@angular/forms": "^9.0.0",
+    "ngx-bootstrap": "^5.6.0",
     "tslib": "^1.10.0"
   },
   "dependencies": {}

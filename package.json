@@ -1,6 +1,6 @@
 {
   "name": "ngx-bootstrap-datetime-popup",
-  "version": "5.1.0-beta.0",
+  "version": "5.1.0",
   "author": {
     "name": "Darren Gillard",
     "email": "darren.gillard81@gmail.com"
@@ -16,7 +16,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build ngx-bootstrap-datetime-popup --prod",
+    "build": "ng build ngx-bootstrap-datetime-popup --prod && ng build demo",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -24,27 +24,27 @@
     "gh-pages": "ng deploy demo --no-silent"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.901.0",
-    "@angular-devkit/build-ng-packagr": "~0.901.0",
-    "@angular/cli": "~9.1.0",
-    "@angular/compiler-cli": "~9.1.0",
-    "@angular/language-service": "~9.1.0",
-    "@types/jasmine": "~3.5.0",
-    "@types/jasminewd2": "~2.0.3",
+    "@angular-devkit/build-angular": "^0.900.0",
+    "@angular-devkit/build-ng-packagr": "^0.900.0",
+    "@angular/cli": "^9.0.0",
+    "@angular/compiler-cli": "^9.0.0",
+    "@angular/language-service": "^9.0.0",
+    "@types/jasmine": "^3.5.0",
+    "@types/jasminewd2": "^2.0.3",
     "@types/node": "^12.11.1",
     "angular-cli-ghpages": "^0.6.2",
     "codelyzer": "^5.1.2",
-    "jasmine-core": "~3.5.0",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~4.4.1",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~2.1.0",
-    "karma-jasmine": "~3.0.1",
+    "jasmine-core": "^3.5.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "karma": "^4.4.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage-istanbul-reporter": "^2.1.0",
+    "karma-jasmine": "^3.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "ng-packagr": "^9.0.0",
-    "protractor": "~5.4.3",
-    "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "protractor": "^5.4.3",
+    "ts-node": "^8.3.0",
+    "tslint": "^6.1.0",
+    "typescript": "^3.8.3"
   }
 }
