@@ -1,5 +1,4 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -17,7 +16,6 @@ import { OffClickDirective } from './offclick.directive';
   imports: [
     CommonModule,
     FormsModule,
-    BrowserAnimationsModule,
     DatepickerModule,
     TimepickerModule,
     BsDropdownModule

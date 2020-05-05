@@ -17,6 +17,7 @@ To use the component, import the `DatetimePopupModule` via your .ts code, and ad
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { DatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
@@ -28,6 +29,7 @@ import { AppComponent } from './app.component';
   imports: [
     FormsModule,
     BrowserModule,
+    BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     DatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
