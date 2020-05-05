@@ -129,4 +129,13 @@ datetime-popup.dropdown .glyphicon.hidden {
 }
 ```
 
+###Common Error
+If you get an error similar to this, then it because you have got a different version of ngx-bootstrap installed than this component is using.  If you open the ngx-bootstrap-datetime-popup and see a node_modules folder you will probably see a folder called ngx-bootstrap inside it.
+```
+ERROR Error: Uncaught (in promise): Error: StaticInjectorError(AppModule)[BsDropdownDirective -> ComponentLoaderFactory]:
+StaticInjectorError(Platform: core)[BsDropdownDirective -> ComponentLoaderFactory]:
+NullInjectorError: No provider for ComponentLoaderFactory!
+Error: NullInjectorError: No provider for ComponentLoaderFactory!
+```
+
 If you want more features please create a PR as i am a little struck for time at the moment.  Happy coding!
