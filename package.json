@@ -1,6 +1,6 @@
 {
   "name": "ngx-bootstrap-datetime-popup",
-  "version": "5.1.0",
+  "version": "5.1.0-beta.1",
   "author": {
     "name": "Darren Gillard",
     "email": "darren.gillard81@gmail.com"
@@ -12,6 +12,7 @@
   "bugs": {
     "url": "https://github.com/gillardo/ngx-bootstrap-datetime-popup/issues"
   },
+  "license": "MIT",
   "url": "https://github.com/gillardo/ngx-bootstrap-datetime-popup#readme",
   "scripts": {
     "ng": "ng",

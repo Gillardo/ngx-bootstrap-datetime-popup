@@ -1,8 +1,6 @@
 {
   "name": "ngx-bootstrap-datetime-popup",
-  "version": "5.1.0",
   "description": "Datetime popup component using ngx-bootstrap datePicker, timePicker and bsDropdown",
-  "license": "MIT",
   "keywords": [
     "angular",
     "angular8",
@@ -17,18 +15,6 @@
     "ngx-bootstrap-datetime-popup",
     "typescript"
   ],
-  "author": {
-    "name": "Darren Gillard",
-    "email": "darren.gillard81@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gillardo/ngx-bootstrap-datetime-popup"
-  },
-  "bugs": {
-    "url": "https://github.com/gillardo/ngx-bootstrap-datetime-popup/issues"
-  },
-  "url": "https://github.com/gillardo/ngx-bootstrap-datetime-popup#readme",
   "peerDependencies": {
     "@angular/common": "^9.0.0",
     "@angular/core": "^9.0.0",
