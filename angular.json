@@ -166,7 +166,7 @@
           "builder": "angular-cli-ghpages:deploy",
           "options": {
             "baseHref": "https://gillardo.github.io/ngx-bootstrap-datetime-popup/",
-            "repo": "https://github.com/Gillardo/ngx-bootstrap-datetime-popup/"
+            "repo": "https://github.com/Gillardo/ngx-bootstrap-datetime-popup.git"
           }
         }
       }
