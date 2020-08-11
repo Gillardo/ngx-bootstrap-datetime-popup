@@ -1,4 +1,4 @@
-NOTE: DO NOT USE 5.0.0 THIS IS BROKEN!! PLEASE USE 5.0.1+ WITH NGX-BOOTSTRAP 5.0.0+.  If you require ngx-bootstrap v4+ then continue to use 4.3.0+  
+NOTE: DO NOT USE 5.0.0 THIS IS BROKEN!! PLEASE USE 5.0.1+ WITH NGX-BOOTSTRAP 5.0.0+.  If you require ngx-bootstrap v4+ then continue to use 4.3.0+. For angular 10, please use 6.0.0+ 
 
 # ngx-bootstrap-datetime-popup
 Date and time popup picker using ngx-bootstrap library
@@ -50,7 +50,7 @@ Now add the component to your HTML.
 <datetime-popup [(value)]="myDate"></datetime-popup>
 ```
 
-I have now added code so you can change attributes on the "Clear", "Now" and "Close" buttons.  in order to do this, you must use an object that implements the same properties as the IDatetimePopupButtonOptions interface
+I have now added code which allows you to change attributes on the "Clear", "Now" and "Close" buttons.  in order to do this, you must use an object that implements the same properties as the IDatetimePopupButtonOptions interface
 
 ```
 export interface IDatetimePopupButtonOptions {
@@ -138,4 +138,4 @@ NullInjectorError: No provider for ComponentLoaderFactory!
 Error: NullInjectorError: No provider for ComponentLoaderFactory!
 ```
 
-If you want more features please create a PR as i am a little struck for time at the moment.  Happy coding!
+If you want more features please create a PR as I am a little struck for time at the moment.  Happy coding!
