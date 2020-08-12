@@ -1,6 +1,6 @@
 {
   "name": "ngx-bootstrap-datetime-popup",
-  "version": "6.0.0-beta.0",
+  "version": "6.0.0-beta.2",
   "author": {
     "name": "Darren Gillard",
     "email": "darren.gillard81@gmail.com"
@@ -21,7 +21,7 @@
     "ng": "ng",
     "update": "ng update @angular/cli",
     "start": "ng serve",
-    "build": "ng build ngx-bootstrap-datetime-popup --prod",
+    "build": "ng build ngx-bootstrap-datetime-popup",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
