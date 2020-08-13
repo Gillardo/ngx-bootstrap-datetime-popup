@@ -13,7 +13,7 @@ export class OffClickDirective implements OnInit, OnDestroy {
 
   }
 
-  public ngOnInit() {
+  ngOnInit() {
     this.eventHandler = ($event: any) => {
       $event.stopPropagation();
 
@@ -25,7 +25,7 @@ export class OffClickDirective implements OnInit, OnDestroy {
     document.addEventListener('mouseup', this.eventHandler);
   }
 
-  public ngOnDestroy() {
+  ngOnDestroy() {
     document.removeEventListener('mouseup', this.eventHandler);
   }
 }
