@@ -19,6 +19,7 @@
   "typings": "./dist/ngx-bootstrap-datetime-popup.d.ts",
   "scripts": {
     "ng": "ng",
+    "update": "ng update @angular/cli",
     "start": "ng serve",
     "build": "ng build ngx-bootstrap-datetime-popup --prod",
     "test": "ng test",
