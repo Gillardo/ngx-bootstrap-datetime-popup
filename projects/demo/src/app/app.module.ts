@@ -22,7 +22,7 @@ import { DateComponent } from './date.component';
     DatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
     BsDropdownModule.forRoot(),
-    DatetimePopupModule.forRoot()
+    DatetimePopupModule
   ],
   providers: [
 

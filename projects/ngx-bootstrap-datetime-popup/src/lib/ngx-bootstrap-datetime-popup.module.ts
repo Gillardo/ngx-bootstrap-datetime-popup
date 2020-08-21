@@ -5,7 +5,6 @@ import { DatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { DatetimePopupComponent } from './ngx-bootstrap-datetime-popup.component';
-import { DatetimePopupService } from './ngx-bootstrap-datetime-popup.service';
 import { OffClickDirective } from './offclick.directive';
 
 @NgModule({
@@ -29,12 +28,5 @@ import { OffClickDirective } from './offclick.directive';
 })
 
 export class DatetimePopupModule {
-  public static forRoot(): ModuleWithProviders<DatetimePopupModule> {
-    return {
-      ngModule: DatetimePopupModule,
-      providers: [
-        DatetimePopupService
-      ]
-    };
-  }
+
 }

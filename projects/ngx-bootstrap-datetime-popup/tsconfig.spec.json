@@ -1,7 +1,9 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/spec",
+    "module": "commonjs",
+    "target": "ES2017",
     "types": [
       "jasmine",
       "node"
