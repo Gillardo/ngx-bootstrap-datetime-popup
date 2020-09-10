@@ -3,7 +3,7 @@
   "description": "Datetime popup component using ngx-bootstrap datePicker, timePicker and bsDropdown",
   "keywords": [
     "angular",
-    "angular10",
+    "angular8",
     "aot",
     "aot-compatible",
     "aot-compilation",
@@ -19,9 +19,8 @@
     "@angular/common": "^9.0.0",
     "@angular/core": "^9.0.0",
     "@angular/forms": "^9.0.0",
-    "ngx-bootstrap": "^6.0.0"
+    "ngx-bootstrap": "^5.6.0",
+    "tslib": "^1.10.0"
   },
-  "dependencies": {
-    "tslib": "^2.0.0"
-  }
+  "dependencies": {}
 }
