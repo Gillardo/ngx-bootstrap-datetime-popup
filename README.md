@@ -1,4 +1,5 @@
 NOTE: DO NOT USE 5.0.0 THIS IS BROKEN!! PLEASE USE 5.0.1+ WITH NGX-BOOTSTRAP 5.0.0+.  If you require ngx-bootstrap v4+ then continue to use 4.3.0+  
+If you want to use angular 9+ please use v6.1.0+
 
 # ngx-bootstrap-datetime-popup
 Date and time popup picker using ngx-bootstrap library
@@ -11,7 +12,7 @@ This is currently a very simple date time picker, with only the features i neede
 
 Simple example in demo folder, which can also be found on github pages at https://gillardo.github.io/ngx-bootstrap-datetime-popup/
 
-To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules using the .forRoot() function.  You must also import the modules `datepicker`, `timepicker` and `dropdown` from `ngx-bootstrap` as there are services that are used
+To use the component, import the `DatetimePopupModule` via your .ts code, and add it to your modules .  You must also import the modules `datepicker`, `timepicker` and `dropdown` from `ngx-bootstrap` as there are services that are used
 
 ```
 import { NgModule } from '@angular/core';
@@ -33,7 +34,7 @@ import { AppComponent } from './app.component';
     BsDropdownModule.forRoot(),
     DatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
-    DatetimePopupModule.forRoot()
+    DatetimePopupModule
   ],
   declarations: [ AppComponent ],
   bootstrap: [ AppComponent ]
@@ -71,7 +72,7 @@ The component accepts 3 inputs `closeButton`, `clearButton` and `nowButton`, so 
 <datetime-popup [(value)]="myDate" [closeButton]="myCloseOptions"></datetime-popup>
 ```
 
-Since i dont really like the style of the ngx-bootstrap datePicker, you can override the css like any other style, here is an example
+Since i don't really like the style of the ngx-bootstrap datePicker, you can override the css like any other style, here is an example
 
 This css also overrides the glyphicon icons that are no longer used in bootstrap 4.
 
