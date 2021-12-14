@@ -8,23 +8,20 @@ import { DatetimePopupComponent } from './ngx-bootstrap-datetime-popup.component
 import { OffClickDirective } from './offclick.directive';
 
 @NgModule({
-  declarations: [
-    DatetimePopupComponent,
-    OffClickDirective
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    DatepickerModule,
-    TimepickerModule,
-    BsDropdownModule
-  ],
-  exports: [
-    DatetimePopupComponent
-  ],
-  entryComponents: [
-    DatetimePopupComponent
-  ]
+    declarations: [
+        DatetimePopupComponent,
+        OffClickDirective
+    ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        DatepickerModule,
+        TimepickerModule,
+        BsDropdownModule
+    ],
+    exports: [
+        DatetimePopupComponent
+    ]
 })
 
 export class DatetimePopupModule {
