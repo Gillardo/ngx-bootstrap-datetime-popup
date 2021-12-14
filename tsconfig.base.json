@@ -15,12 +15,6 @@
       "es2018",
       "dom"
     ],
-    "paths": {
-      "ngx-bootstrap-datetime-popup": [
-        "dist/ngx-bootstrap-datetime-popup/ngx-bootstrap-datetime-popup",
-        "dist/ngx-bootstrap-datetime-popup"
-      ]
-    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

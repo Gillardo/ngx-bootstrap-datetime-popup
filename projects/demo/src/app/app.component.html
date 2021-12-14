@@ -2,7 +2,8 @@
 <h3>Select a date</h3>
 <div class="row">
   <div class="col-12 col-md-6">
-    <input-date [(value)]="localValue1" [(showPicker)]="showPicker1"></input-date>
+    <input type="datetime" [value]="localValue1" (click)="showPicker1=true" />
+    <datetime-popup [(value)]="localValue1" [(showPopup)]="showPicker1"></datetime-popup>
   </div>
 </div>
 <div>
@@ -13,7 +14,8 @@
 <h3>Select a time</h3>
 <div class="row">
   <div class="col-12 col-md-6">
-    <input-date [(value)]="localValue2" [(showPicker)]="showPicker2" [showDate]="false" [showTime]="true"></input-date>
+    <input type="datetime" [value]="localValue2" (click)="showPicker2=true" />
+    <datetime-popup [(value)]="localValue2" [(showPopup)]="showPicker2" [showDate]="false" [showTime]="true"></datetime-popup>
   </div>
 </div>
 <div>
@@ -24,7 +26,8 @@
 <h3>Select a date and time</h3>
 <div class="row">
   <div class="col-12 col-md-6">
-    <input-date [(value)]="localValue3" [(showPicker)]="showPicker3" [showDate]="true" [showTime]="true"></input-date>
+    <input type="datetime" [value]="localValue3" (click)="showPicker3=true" />
+    <datetime-popup [(value)]="localValue3" [(showPopup)]="showPicker3" [showDate]="true" [showTime]="false"></datetime-popup>
   </div>
 </div>
 <div>

@@ -2,33 +2,25 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { DatetimePopupModule } from '../../../ngx-bootstrap-datetime-popup/src/lib/ngx-bootstrap-datetime-popup.module';
+import { DatetimePopupModule } from 'projects/ngx-bootstrap-datetime-popup/src/public-api';
 
 import { AppComponent } from './app.component';
-import { DateComponent } from './date.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DateComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    BsDatepickerModule.forRoot(),
     DatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
     BsDropdownModule.forRoot(),
-    DatetimePopupModule
+    DatetimePopupModule,
   ],
-  providers: [
-
-  ],
-  bootstrap: [
-    AppComponent
-  ]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

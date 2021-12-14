@@ -16,10 +16,10 @@
     "typescript"
   ],
   "peerDependencies": {
-    "@angular/common": "^9.0.0",
-    "@angular/core": "^9.0.0",
-    "@angular/forms": "^9.0.0",
-    "ngx-bootstrap": "^6.0.0"
+    "@angular/common": "^12.0.0 || ^13.0.0",
+    "@angular/core": "^12.0.0 || ^13.0.0",
+    "@angular/forms": "^12.0.0 || ^13.0.0",
+    "ngx-bootstrap": "^7.0.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"
