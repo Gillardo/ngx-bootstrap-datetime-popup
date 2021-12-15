@@ -1,20 +1,21 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { NgxBootstrapDatetimePopupComponent } from './ngx-bootstrap-datetime-popup.component';
+import { DatetimePopupComponent } from './ngx-bootstrap-datetime-popup.component';
 
 describe('NgxBootstrapDatetimePopupComponent', () => {
-  let component: NgxBootstrapDatetimePopupComponent;
-  let fixture: ComponentFixture<NgxBootstrapDatetimePopupComponent>;
+  let component: DatetimePopupComponent;
+  let fixture: ComponentFixture<DatetimePopupComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ NgxBootstrapDatetimePopupComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [DatetimePopupComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxBootstrapDatetimePopupComponent);
+    fixture = TestBed.createComponent(DatetimePopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,32 +1,23 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerConfig, BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDropdownConfig, BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { DatetimePopupComponent } from './ngx-bootstrap-datetime-popup.component';
 import { OffClickDirective } from './offclick.directive';
 
 @NgModule({
-  declarations: [
-    DatetimePopupComponent,
-    OffClickDirective
-  ],
+  declarations: [DatetimePopupComponent, OffClickDirective],
   imports: [
     CommonModule,
     FormsModule,
     DatepickerModule,
     TimepickerModule,
-    BsDropdownModule
+    BsDatepickerModule,
+    BsDropdownModule,
   ],
-  exports: [
-    DatetimePopupComponent
-  ],
-  entryComponents: [
-    DatetimePopupComponent
-  ]
+  exports: [DatetimePopupComponent],
+  providers: [BsDatepickerConfig, BsDropdownConfig]
 })
-
-export class DatetimePopupModule {
-
-}
+export class DatetimePopupModule {}

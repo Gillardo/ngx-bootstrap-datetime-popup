@@ -2,15 +2,14 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/lib",
-    "target": "ES2017",
-    "module": "es2015",
-    "moduleResolution": "node",
+    "target": "es2015",
     "declaration": true,
+    "declarationMap": true,
     "inlineSources": true,
     "types": [],
     "lib": [
       "dom",
-      "es6"
+      "es2018"
     ]
   },
   "angularCompilerOptions": {
