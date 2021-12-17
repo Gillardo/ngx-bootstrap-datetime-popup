@@ -1,6 +1,6 @@
 {
   "name": "ngx-bootstrap-datetime-popup",
-  "version": "7.0.0",
+  "version": "7.0.2",
   "description": "Datetime popup component using ngx-bootstrap datePicker, timePicker and bsDropdown",
   "keywords": [
     "angular",
