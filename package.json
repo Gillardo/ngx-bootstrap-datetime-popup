@@ -26,7 +26,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "watch": "ng serve demo --port 4300",
-    "gh-pages": "ng deploy demo --no-silent"
+    "gh-pages": "ng deploy demo --no-silent",
+    "publish": "npm run build && cd dist && npm publish"
   },
   "dependencies": {
     "@angular/animations": "^13.1.0",
