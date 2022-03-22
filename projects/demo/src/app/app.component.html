@@ -1,36 +1,64 @@
 <hr />
-<h3>Select a date</h3>
+<h3>Select a date and time</h3>
 <div class="row">
   <div class="col-12 col-md-6">
-    <input type="datetime" [value]="localValue1" (click)="showPicker1=true" />
-    <datetime-popup [(value)]="localValue1" [(showPopup)]="showPicker1"></datetime-popup>
+    <input
+      type="datetime"
+      [ngModel]="localValue1"
+      (click)="showPicker1=true"
+      name="test"
+      id="picker1"
+    />
+    <datetime-popup
+      [(value)]="localValue1"
+      [(showPopup)]="showPicker1"
+    ></datetime-popup>
   </div>
 </div>
 <div>
-  <strong>Selected date:</strong> {{ localValue1 }}
+  <strong>Selected value:</strong> {{ localValue1 }}
 </div>
 
 <hr />
 <h3>Select a time</h3>
 <div class="row">
   <div class="col-12 col-md-6">
-    <input type="datetime" [value]="localValue2" (click)="showPicker2=true" />
-    <datetime-popup [(value)]="localValue2" [(showPopup)]="showPicker2" [showDate]="false" [showTime]="true"></datetime-popup>
+    <input
+      type="datetime"
+      [value]="localValue2"
+      (click)="showPicker2=true"
+      id="picker2"
+    />
+    <datetime-popup
+      [(value)]="localValue2"
+      [(showPopup)]="showPicker2"
+      [showDate]="false"
+      [showTime]="true"
+    ></datetime-popup>
   </div>
 </div>
 <div>
-  <strong>Selected date:</strong> {{ localValue2 }}
+  <strong>Selected value:</strong> {{ localValue2 }}
 </div>
 
 <hr />
-<h3>Select a date and time</h3>
+<h3>Select a date</h3>
 <div class="row">
   <div class="col-12 col-md-6">
-    <input type="datetime" [value]="localValue3" (click)="showPicker3=true" />
-    <datetime-popup [(value)]="localValue3" [(showPopup)]="showPicker3" [showDate]="true" [showTime]="false"></datetime-popup>
+    <input
+      type="datetime"
+      [value]="localValue3"
+      (click)="showPicker3=true"
+      id="picker3"
+    />
+    <datetime-popup
+      [(value)]="localValue3"
+      [(showPopup)]="showPicker3"
+      [showDate]="true"
+      [showTime]="false"
+    ></datetime-popup>
   </div>
 </div>
 <div>
-  <strong>Selected date:</strong> {{ localValue3 }}
+  <strong>Selected value:</strong> {{ localValue3 }}
 </div>
-

@@ -7,18 +7,19 @@ import {
   Output,
   ViewChild
 } from '@angular/core';
-import { IDatetimePopupButtonOptions } from './ngx-bootstrap-datetime-popup-botton-options.interface';
+import {
+  BsDatepickerConfig,
+  BsDatepickerViewMode,
+} from 'ngx-bootstrap/datepicker';
 import { BsDropdownDirective } from 'ngx-bootstrap/dropdown';
+import { IDatetimePopupButtonOptions } from './ngx-bootstrap-datetime-popup-button-options.interface';
 
 @Component({
   selector: 'datetime-popup',
-  templateUrl: './ngx-bootstrap-datetime-popup.component.html' ,
-  styles: [
-  ],
+  templateUrl: './ngx-bootstrap-datetime-popup.component.html',
+  styles: [],
 })
-
 export class DatetimePopupComponent implements OnChanges {
-
   @ViewChild('dropdown', { static: true })
   public dropdown: BsDropdownDirective;
 
@@ -53,7 +54,7 @@ export class DatetimePopupComponent implements OnChanges {
   public showSeconds = false;
 
   @Input()
-  public datepickerMode = 'day';
+  public datepickerMode: BsDatepickerViewMode = 'day';
 
   @Input()
   public initDate: Date = null;
@@ -88,22 +89,37 @@ export class DatetimePopupComponent implements OnChanges {
   public localValue: Date = null;
   public isOpening = false;
   public isDropUp = false;
+  public datepickerConfig: BsDatepickerConfig;
 
-  constructor(private elementRef: ElementRef) {
-
-  }
+  constructor(private elementRef: ElementRef) {}
 
   public ngOnChanges(changes: any) {
+    this.datepickerConfig = {
+      minMode: this.datepickerMode,
+      showWeekNumbers: this.showWeeks,
+    } as BsDatepickerConfig;
     if (!this.nowButton) {
-      this.nowButton = { show: true, label: 'Now', cssClass: 'btn btn-secondary btn-sm'};
+      this.nowButton = {
+        show: true,
+        label: 'Now',
+        cssClass: 'btn btn-secondary btn-sm',
+      };
     }
 
     if (!this.clearButton) {
-      this.clearButton = { show: true, label: 'Clear', cssClass: 'btn btn-secondary btn-sm'};
+      this.clearButton = {
+        show: true,
+        label: 'Clear',
+        cssClass: 'btn btn-secondary btn-sm',
+      };
     }
 
     if (!this.closeButton) {
-      this.closeButton = { show: true, label: 'Close', cssClass: 'btn btn-secondary btn-sm'};
+      this.closeButton = {
+        show: true,
+        label: 'Close',
+        cssClass: 'btn btn-secondary btn-sm',
+      };
     }
 
     // user maybe typing a value into an input box, so would come in as string
@@ -130,12 +146,17 @@ export class DatetimePopupComponent implements OnChanges {
   public onWindowScroll() {
     const nativeEl: HTMLElement = this.elementRef.nativeElement;
     const clientRect: ClientRect = nativeEl.getBoundingClientRect();
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop;
     const offsetTop = clientRect.top + window.pageYOffset;
     const height = clientRect.height;
     const dropdownEl: HTMLElement = nativeEl.children.item(0) as HTMLElement;
-    const menuEl: HTMLElement = dropdownEl.children.length > 0 ? dropdownEl.children.item(0) as HTMLElement : null;
-    let menuHeight = this.showDate && this.showTime ? 402 : this.showDate ? 300 : 102;
+    const menuEl: HTMLElement =
+      dropdownEl.children.length > 0
+        ? (dropdownEl.children.item(0) as HTMLElement)
+        : null;
+    let menuHeight =
+      this.showDate && this.showTime ? 402 : this.showDate ? 300 : 102;
 
     if (menuEl != null) {
       // get the style
@@ -146,10 +167,12 @@ export class DatetimePopupComponent implements OnChanges {
       menuEl.style.display = display;
     }
 
-    if ((offsetTop - menuHeight) <= 0) {
+    if (offsetTop - menuHeight <= 0) {
       this.isDropUp = false;
     } else {
-      this.isDropUp = ((offsetTop + height + menuHeight) > (scrollTop + document.documentElement.clientHeight));
+      this.isDropUp =
+        offsetTop + height + menuHeight >
+        scrollTop + document.documentElement.clientHeight;
     }
   }
 
@@ -159,7 +182,7 @@ export class DatetimePopupComponent implements OnChanges {
       this.onWindowScroll();
       this.dropdown.show();
 
-      setTimeout(() => this.isOpening = false, 250);
+      setTimeout(() => (this.isOpening = false), 250);
     } else {
       this.showPopupChange.emit(false);
     }
@@ -182,25 +205,20 @@ export class DatetimePopupComponent implements OnChanges {
     this.showPopupChange.emit(false);
   }
 
-  public onPickerChange(picker: string) {
+  public onPickerChange(picker: string, event?: Date) {
     if (this.isOpening === true) {
       return;
     }
 
-    if (picker === 'datepicker' && this.value != null) {
-      const hours = this.value.getHours();
-      const minutes = this.value.getMinutes();
-      const seconds = this.value.getSeconds();
-      const milliseconds = this.value.getMilliseconds();
-
-      this.localValue.setHours(hours, minutes, seconds, milliseconds);
+    if (picker === 'datepicker' && event !== null) {
+      this.localValue = event;
     }
 
+    this.value = this.localValue;
     this.valueChange.emit(this.localValue);
 
     if (this.showDate === true && this.showTime === false) {
       this.dropdown.hide();
     }
   }
-
 }

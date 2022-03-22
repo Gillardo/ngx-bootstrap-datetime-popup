@@ -1,41 +1,74 @@
-<div [container]="appendTo" (isOpenChange)="onOpenChange($event)" [dropup]="isDropUp" dropdown #dropdown="bs-dropdown" [autoClose]="false" (offClick)="onOffClick($event)">
-  <ul class="datetime-popup dropdown-menu" role="menu" [ngClass]="{ 'show': dropdown.isOpen === true, 'body-container': appendTo == 'body', 'dropdown': !isDropUp, 'dropup': isDropUp }" *dropdownMenu>
+<div
+  [container]="appendTo"
+  (isOpenChange)="onOpenChange($event)"
+  [dropup]="isDropUp"
+  dropdown
+  #dropdown="bs-dropdown"
+  [autoClose]="false"
+  (offClick)="onOffClick($event)"
+>
+  <ul
+    class="datetime-popup dropdown-menu"
+    role="menu"
+    [ngClass]="{
+       'show': dropdown.isOpen === true,
+     'body-container': appendTo == 'body',
+      'dropdown': !isDropUp,
+       'dropup': isDropUp
+      }"
+    *dropdownMenu
+  >
     <li class="my-2 mx-2">
-      <datepicker *ngIf="showDate"
-                  [(ngModel)]="localValue"
-                  (ngModelChange)="onPickerChange('datepicker')"
-                  [showWeeks]="showWeeks"
-                  [datepickerMode]="datepickerMode"
-                  [minDate]="minDate"
-                  [maxDate]="maxDate"
-                  [dateDisabled]="dateDisabled"></datepicker>
-      <timepicker *ngIf="showTime"
-                  [(ngModel)]="localValue"
-                  [min]="minDate"
-                  [max]="maxDate"
-                  [hourStep]="hourStep"
-                  [minuteStep]="minuteStep"
-                  [secondsStep]="secondsStep"
-                  [showSeconds]="showSeconds"
-                  [showMeridian]="showMeridian"
-                  (ngModelChange)="onPickerChange('timepicker')"></timepicker>
+      <bs-datepicker-inline
+        *ngIf="showDate"
+        [bsValue]="localValue"
+        (bsValueChange)="onPickerChange('datepicker', $event)"
+        [bsConfig]="datepickerConfig"
+        [minDate]="minDate"
+        [maxDate]="maxDate"
+        [datesDisabled]="dateDisabled"
+      >
+      </bs-datepicker-inline>
+      <timepicker
+        *ngIf="showTime"
+        [(ngModel)]="localValue"
+        [min]="minDate"
+        [max]="maxDate"
+        [hourStep]="hourStep"
+        [minuteStep]="minuteStep"
+        [secondsStep]="secondsStep"
+        [showSeconds]="showSeconds"
+        [showMeridian]="showMeridian"
+        (ngModelChange)="onPickerChange('timepicker')"
+      ></timepicker>
     </li>
     <li class="mx-2 mb-2">
       <span class="btn-group float-left">
-          <button type="button"
-                  (click)="onNow()"
-                  *ngIf="nowButton.show"
-                  [ngClass]="nowButton.cssClass">{{ nowButton.label }}</button>
-          <button type="button"
-                  (click)="onClear()"
-                  *ngIf="clearButton.show"
-                  [ngClass]="clearButton.cssClass">{{ clearButton.label }}</button>
+        <button
+          type="button"
+          (click)="onNow()"
+          *ngIf="nowButton.show"
+          [ngClass]="nowButton.cssClass"
+        >{{ nowButton.label
+          }}</button>
+        <button
+          type="button"
+          (click)="onClear()"
+          *ngIf="clearButton.show"
+          [ngClass]="clearButton.cssClass"
+        >{{
+          clearButton.label
+          }}</button>
       </span>
       <span class="btn-group float-right">
-          <button type="button"
-                  (click)="onClose()"
-                  *ngIf="closeButton.show"
-                  [ngClass]="closeButton.cssClass">{{ closeButton.label }}</button>
+        <button
+          type="button"
+          (click)="onClose()"
+          *ngIf="closeButton.show"
+          [ngClass]="closeButton.cssClass"
+        >{{
+          closeButton.label
+          }}</button>
       </span>
     </li>
   </ul>
